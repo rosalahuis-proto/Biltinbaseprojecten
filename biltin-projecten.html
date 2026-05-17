@@ -324,18 +324,25 @@
 
   /* PARTNER FILTERKNOPJES — eigen kleuren los van thema's */
   .fbtn-breman        { border-color: rgba(67,97,238,0.5);   color: #4361EE; }
-  .fbtn-vandersluis   { border-color: rgba(114,9,183,0.5);   color: #7209B7; }
+  .fbtn-vandersluis   { border-color: rgba(233,160,16,0.5);  color: #E9A010; }
   .fbtn-heutink       { border-color: rgba(230,57,70,0.5);   color: #E63946; }
   .fbtn-deltawonen    { border-color: rgba(74,111,165,0.5);  color: #4A6FA5; }
-  .fbtn-hanzestrohm   { border-color: rgba(233,160,16,0.5);  color: #E9A010; }
-  .fbtn-windesheim    { border-color: rgba(181,23,158,0.5);  color: #B5179E; }
+  .fbtn-hanzestrohm   { border-color: rgba(181,23,158,0.5);  color: #B5179E; }
+  .fbtn-windesheim    { border-color: rgba(114,9,183,0.5);   color: #7209B7; }
 
   .fbtn-breman.active       { background: rgba(67,97,238,0.85);   border-color: #4361EE; color: #fff; }
-  .fbtn-vandersluis.active  { background: rgba(114,9,183,0.85);   border-color: #7209B7; color: #fff; }
+  .fbtn-vandersluis.active  { background: rgba(233,160,16,0.85);  border-color: #E9A010; color: #0B1638; }
   .fbtn-heutink.active      { background: rgba(230,57,70,0.85);   border-color: #E63946; color: #fff; }
   .fbtn-deltawonen.active   { background: rgba(74,111,165,0.85);  border-color: #4A6FA5; color: #fff; }
-  .fbtn-hanzestrohm.active  { background: rgba(233,160,16,0.85);  border-color: #E9A010; color: #0B1638; }
-  .fbtn-windesheim.active   { background: rgba(181,23,158,0.85);  border-color: #B5179E; color: #fff; }
+  .fbtn-hanzestrohm.active  { background: rgba(181,23,158,0.85);  border-color: #B5179E; color: #fff; }
+  .fbtn-windesheim.active   { background: rgba(114,9,183,0.85);   border-color: #7209B7; color: #fff; }
+
+  .fbtn-marketing  { background: rgba(0,180,216,0.45); border-color: rgba(0,180,216,0.6); color: #fff; }
+  .fbtn-marketing.active { background: rgba(0,180,216,0.55); border-color: #00B4D8; color: #08043a; }
+  .pill-marketing  { background: rgba(0,180,216,0.45); border-color: rgba(0,180,216,0.6); }
+
+  .fbtn-biltinintern  { border-color: rgba(20,157,72,0.5); color: #149d48; }
+  .fbtn-biltinintern.active { background: rgba(20,157,72,0.85); border-color: #149d48; color: #08043a; }
 </style>
 </head>
 <body>
@@ -353,17 +360,19 @@
       <button class="filter-btn fbtn-lectoraat" data-filter="Lectoraat energietransitie" data-group="thema">Lectoraat energietransitie</button>
       <button class="filter-btn fbtn-energie" data-filter="Minder energieverbruik" data-group="thema">Minder energieverbruik</button>
       <button class="filter-btn fbtn-netcongestie" data-filter="Netcongestie" data-group="thema">Netcongestie</button>
+      <button class="filter-btn fbtn-marketing" data-filter="Marketing en strategie" data-group="thema">Marketing en strategie</button>
     </div>
   </div>
   <div class="filter-group">
     <span class="filter-label">Partner</span>
     <div class="filter-tags">
-      <button data-filter="Breman" data-group="partner" class="filter-btn fbtn-breman"><span class="partner-logo-tip"><img src="JOUW_GITHUB_URL/breman-logo.png" alt="Breman"></span>Breman</button>
-      <button data-filter="Van der Sluis" data-group="partner" class="filter-btn fbtn-vandersluis"><span class="partner-logo-tip"><img src="JOUW_GITHUB_URL/vandersluis-logo.png" alt="Van der Sluis"></span>Van der Sluis</button>
-      <button data-filter="Heutink" data-group="partner" class="filter-btn fbtn-heutink"><span class="partner-logo-tip"><img src="JOUW_GITHUB_URL/heutink-logo.png" alt="Heutink"></span>Heutink</button>
-      <button data-filter="Deltawonen" data-group="partner" class="filter-btn fbtn-deltawonen"><span class="partner-logo-tip"><img src="JOUW_GITHUB_URL/deltawonen-logo.png" alt="Deltawonen"></span>Deltawonen</button>
-      <button data-filter="Hanzestrohm" data-group="partner" class="filter-btn fbtn-hanzestrohm"><span class="partner-logo-tip"><img src="JOUW_GITHUB_URL/hanzestrohm-logo.png" alt="Hanzestrohm"></span>Hanzestrohm</button>
-      <button data-filter="Windesheim" data-group="partner" class="filter-btn fbtn-windesheim"><span class="partner-logo-tip"><img src="JOUW_GITHUB_URL/windesheim-logo.png" alt="Windesheim"></span>Windesheim</button>
+      <button data-filter="Breman" data-group="partner" class="filter-btn fbtn-breman"><span class="partner-logo-inline"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/breman-logo.png" alt="Breman"></span>Breman</button>
+      <button data-filter="Van der Sluis" data-group="partner" class="filter-btn fbtn-vandersluis"><span class="partner-logo-inline"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/vandersluis-logo.png" alt="Van der Sluis"></span>Van der Sluis</button>
+      <button data-filter="Heutink" data-group="partner" class="filter-btn fbtn-heutink"><span class="partner-logo-inline"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/heutink-logo.png" alt="Heutink"></span>Heutink</button>
+      <button data-filter="Deltawonen" data-group="partner" class="filter-btn fbtn-deltawonen"><span class="partner-logo-inline"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/deltawonen-logo.png" alt="Deltawonen"></span>Deltawonen</button>
+      <button data-filter="Hanzestrohm" data-group="partner" class="filter-btn fbtn-hanzestrohm"><span class="partner-logo-inline"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/hanzestrohm-logo.png" alt="Hanzestrohm"></span>Hanzestrohm</button>
+      <button data-filter="Windesheim" data-group="partner" class="filter-btn fbtn-windesheim"><span class="partner-logo-inline"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/windesheim-logo.png" alt="Windesheim"></span>Windesheim</button>
+      <button class="filter-btn fbtn-biltinintern" data-filter="Biltin" data-group="partner">Biltin intern</button>
     </div>
   </div>
   <div class="filter-group">
@@ -374,7 +383,7 @@
     </div>
   </div>
   <div class="filter-group">
-    <span class="filter-label">Jaar</span>
+    <span class="filter-label">Start project</span>
     <div class="filter-tags">
       <button class="filter-btn" data-filter="2025" data-group="jaar">2025</button>
       <button class="filter-btn" data-filter="2026" data-group="jaar">2026</button>
@@ -417,13 +426,13 @@
     </div>
   </div>
 
-  <div class="project-card" data-thema="Circulair" data-status="Afgerond" data-jaar="2025" data-partner="Windesheim">
+  <div class="project-card" data-thema="Marketing en strategie" data-status="Afgerond" data-jaar="2025" data-partner="Biltin">
     <div class="card-bg img-3"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-circulair">Circulair</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-marketing">Marketing en strategie</span><span class="year-pill">2025</span></div>
     <div class="card-content">
-      <div class="card-category">Windesheim</div>
-      <div class="card-title">Materialenpaspoort Renovatieproject</div>
-      <div class="card-description">Ontwikkeling van een digitaal materialenpaspoort voor hergebruik van bouwcomponenten na sloop.</div>
+      <div class="card-category">Biltin</div>
+      <div class="card-title">Aanloop studenten Biltin</div>
+      <div class="card-description">Hoe kan Biltin studenten eerder en meer aantrekken.</div>
       <div class="card-footer-row">
         <a class="card-btn" href="#">Bekijk project</a>
         <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
@@ -464,8 +473,8 @@
     <div class="card-top"><span class="theme-pill pill-duurzame">Duurzame materialen</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Breman</div>
-      <div class="card-title">Gerecyclede Betonmengsels</div>
-      <div class="card-description">Testen van betonmengsels met 40% gerecycled granulaat in dragende constructies van utiliteitsgebouwen.</div>
+      <div class="card-title">Project titel</div>
+      <div class="card-description">Voeg hier een korte beschrijving van het project toe.</div>
       <div class="card-footer-row">
         <a class="card-btn" href="#">Bekijk project</a>
         <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
@@ -562,8 +571,8 @@
     <div class="card-top"><span class="theme-pill pill-klimaatadaptief">Klimaatadaptief</span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Deltawonen</div>
-      <div class="card-title">Groene Daken Programma Zwolle</div>
-      <div class="card-description">Grootschalige implementatie van groene daken op bestaande woningbouw ter verbetering van waterretentie.</div>
+      <div class="card-title">Project titel</div>
+      <div class="card-description">Voeg hier een korte beschrijving van het project toe.</div>
       <div class="card-footer-row">
         <a class="card-btn" href="#">Bekijk project</a>
         <div class="card-meta-row"><span class="status-dot lopend"></span><span>Lopend</span></div>
@@ -604,8 +613,8 @@
     <div class="card-top"><span class="theme-pill pill-lectoraat">Lectoraat energietransitie</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Windesheim</div>
-      <div class="card-title">Zonnepanelen op Monumentale Panden</div>
-      <div class="card-description">Onderzoek naar esthetisch verantwoorde integratie van zonnepanelen op rijksmonumenten.</div>
+      <div class="card-title">Project titel</div>
+      <div class="card-description">Voeg hier een korte beschrijving van het project toe.</div>
       <div class="card-footer-row">
         <a class="card-btn" href="#">Bekijk project</a>
         <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
