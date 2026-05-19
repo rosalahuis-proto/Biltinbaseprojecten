@@ -717,6 +717,724 @@
     padding: 8px 16px;
     border-radius: 12px;
     display: inline-flex;
+    align-items: center;<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biltin Projecten</title>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1638;
+    --purple: #7C5CFC;
+    --purple-light: #9B7FFD;
+    --teal: #2EC4B6;
+    --coral: #FF6B6B;
+    --green: #06D6A0;
+    --text: #E8EDF8;
+    --text-muted: #8A9BC5;
+    --border: rgba(255,255,255,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: linear-gradient(135deg, #1a1a8c 0%, #4a1a8c 40%, #8c1a6e 100%);
+    position: relative;
+    color: var(--text);
+    font-family: 'Work Sans', sans-serif;
+    min-height: 100vh;
+    padding: 32px 24px;
+  }
+
+  .filter-section { margin-bottom: 0; }
+  .filter-group { margin-bottom: 12px; }
+
+  .filter-label {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .filter-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .filter-btn {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 7px 14px;
+    border-radius: 100px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover { border-color: rgba(255,255,255,0.3); color: var(--text); }
+  .filter-btn.active { color: #fff; }
+  .filter-btn.active-teal { background: var(--teal); border-color: var(--teal); color: var(--navy); font-weight: 600; }
+  .filter-btn.active-coral { background: var(--coral); border-color: var(--coral); color: #fff; }
+
+  /* Thema filterknopjes — altijd zichtbare kleur */
+  /* Thema knoppen — inactief subtiel, actief oplichtend */
+  .fbtn-klimaatadaptief  { background: linear-gradient(135deg, #00cc44 0%, #0077ff 100%) !important;  border-color: rgba(46,196,182,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-klimaatcascade  { background: linear-gradient(135deg, #0077ff 0%, #9900ff 100%) !important;  border-color: rgba(76,201,240,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-biobased  { background: linear-gradient(135deg, #9900ff 0%, #ff0099 100%) !important;   border-color: rgba(6,214,160,0.4);   color: rgba(255,255,255,0.7); }
+  .fbtn-circulair  { background: linear-gradient(135deg, #ff0099 0%, #ff0000 100%) !important;  border-color: rgba(138,201,38,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-duurzame  { background: linear-gradient(135deg, #ff0000 0%, #ff6600 100%) !important; border-color: rgba(255,209,102,0.4); color: rgba(255,255,255,0.7); }
+  .fbtn-slim  { background: linear-gradient(135deg, #ff6600 0%, #ffdd00 100%) !important;  border-color: rgba(124,92,252,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-lectoraat  { background: linear-gradient(135deg, #ffdd00 0%, #00cc44 100%) !important;  border-color: rgba(247,37,133,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-energie  { background: linear-gradient(135deg, #00bb55 0%, #00ccff 100%) !important;  border-color: rgba(255,159,28,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-netcongestie  { background: linear-gradient(135deg, #66ddff 0%, #0077cc 100%) !important; border-color: rgba(255,107,107,0.4); color: rgba(255,255,255,0.7); }
+
+  .fbtn-klimaatadaptief.active  { box-shadow: 0 0 16px rgba(0,119,255,0.8) !important; }
+  .fbtn-klimaatcascade.active  { box-shadow: 0 0 16px rgba(153,0,255,0.8) !important; }
+  .fbtn-biobased.active  { box-shadow: 0 0 16px rgba(255,0,153,0.8) !important; }
+  .fbtn-circulair.active  { box-shadow: 0 0 16px rgba(255,0,0,0.8) !important; }
+  .fbtn-duurzame.active  { box-shadow: 0 0 16px rgba(255,102,0,0.8) !important; }
+  .fbtn-slim.active  { box-shadow: 0 0 16px rgba(255,221,0,0.8) !important; }
+  .fbtn-lectoraat.active  { box-shadow: 0 0 16px rgba(0,204,68,0.8) !important; }
+  .fbtn-energie.active  { box-shadow: 0 0 16px rgba(0,204,255,0.8) !important; }
+  .fbtn-netcongestie.active  { box-shadow: 0 0 16px rgba(0,51,153,0.8) !important; }
+
+  .filter-reset-row {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .reset-btn {
+    background: rgba(255,107,107,0.12);
+    border: 1px solid rgba(255,107,107,0.4);
+    color: #FF6B6B;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .reset-btn:hover { background: rgba(255,107,107,0.25); border-color: #FF6B6B; }
+
+  .results-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .results-count { font-size: 14px; color: var(--text-muted); }
+  .results-count span { color: var(--purple-light); font-weight: 600; }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  /* CARD — full bleed afbeelding */
+  .project-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .project-card.hidden { display: none; }
+
+  .card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+  }
+
+  .project-card:hover .card-bg { transform: scale(1.05); }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.05) 0%,
+      rgba(0,0,0,0.25) 40%,
+      rgba(0,0,0,0.88) 100%
+    );
+  }
+
+  .card-top {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .theme-pill {
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.3px;
+  }
+
+  .year-pill {
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.8);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    flex-shrink: 0;
+  }
+
+  .card-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 22px;
+  }
+
+  .card-category {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 6px;
+  }
+
+  .card-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .card-description {
+    font-size: 13px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-btn {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.28);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .card-btn:hover { background: rgba(255,255,255,0.3); }
+
+  .card-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .status-dot.lopend { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .status-dot.afgerond { background: rgba(255,255,255,0.4); }
+
+  .no-results { display: none; text-align: center; padding: 60px 20px; color: var(--text-muted); grid-column: 1 / -1; }
+  .no-results.visible { display: block; }
+  .no-results-icon { font-size: 40px; margin-bottom: 12px; }
+  .no-results h3 { font-family: 'Work Sans', sans-serif; font-size: 18px; color: var(--text); margin-bottom: 8px; }
+
+  /* AFBEELDINGEN
+     Vervang de URL's hieronder door echte projectfoto's
+     Gebruik: background-image: url('JOUW_FOTO_URL');       */
+  /* THEMA PILL KLEUREN */
+  .pill-klimaatadaptief   { background: rgba(46,196,182,0.45);   border-color: rgba(46,196,182,0.6); }
+  .pill-klimaatcascade    { background: rgba(76,201,240,0.45);   border-color: rgba(76,201,240,0.6); }
+  .pill-biobased          { background: rgba(6,214,160,0.45);    border-color: rgba(6,214,160,0.6); }
+  .pill-circulair         { background: rgba(138,201,38,0.45);   border-color: rgba(138,201,38,0.6); }
+  .pill-duurzame          { background: rgba(255,209,102,0.45);  border-color: rgba(255,209,102,0.6); }
+  .pill-slim              { background: rgba(124,92,252,0.5);    border-color: rgba(124,92,252,0.7); }
+  .pill-lectoraat         { background: rgba(247,37,133,0.45);   border-color: rgba(247,37,133,0.6); }
+  .pill-energie           { background: rgba(255,159,28,0.45);   border-color: rgba(255,159,28,0.6); }
+  .pill-netcongestie      { background: rgba(255,107,107,0.45);  border-color: rgba(255,107,107,0.6); }
+
+    .img-1, .img-2, .img-4, .img-5, .img-7, .img-8, .img-9, .img-10 { background: linear-gradient(135deg, #162050 0%, #1e2d6b 100%); }
+    .img-3 { background: linear-gradient(135deg, #162050 0%, #1e2d6b 100%); }
+    .img-6 { background: linear-gradient(135deg, #162050 0%, #1e2d6b 100%); }
+
+  /* PARTNER LOGO IN PIL */
+  .filter-btn[data-group="partner"] {
+    position: relative;
+    transition: padding 0.3s ease;
+    overflow: hidden;
+  }
+
+  .filter-btn[data-group="partner"] .partner-text {
+    display: inline-block;
+    transition: opacity 0.2s ease, max-width 0.3s ease;
+    vertical-align: middle;
+  }
+
+  .filter-btn[data-group="partner"] .partner-logo-inline {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
+
+  .filter-btn[data-group="partner"].logo-hover .partner-text {
+    display: none;
+  }
+
+  .filter-btn[data-group="partner"].logo-hover .partner-logo-inline {
+    display: inline-flex;
+  }
+
+  .filter-btn[data-group="partner"].logo-hover {
+    padding: 8px 16px;
+  }
+
+  .partner-logo-inline img {
+    height: 48px;
+    width: auto;
+    display: block;
+    background: transparent;
+    padding: 0;
+    mix-blend-mode: screen;
+    border-radius: 8px;
+  }
+
+
+
+  /* PARTNER FILTERKNOPJES — eigen kleuren los van thema's */
+  .fbtn-breman        { border-color: rgba(67,97,238,0.5);   color: #4361EE; }
+  .fbtn-vandersluis   { border-color: rgba(233,160,16,0.5);  color: #E9A010; }
+  .fbtn-heutink       { border-color: rgba(230,57,70,0.5);   color: #E63946; }
+  .fbtn-deltawonen    { border-color: rgba(74,111,165,0.5);  color: #4A6FA5; }
+  .fbtn-hanzestrohm   { border-color: rgba(181,23,158,0.5);  color: #B5179E; }
+  .fbtn-windesheim    { border-color: rgba(114,9,183,0.5);   color: #7209B7; }
+
+  .fbtn-breman.active       { background: rgba(67,97,238,0.85);   border-color: #4361EE; color: #fff; }
+  .fbtn-vandersluis.active  { background: rgba(233,160,16,0.85);  border-color: #E9A010; color: #0B1638; }
+  .fbtn-heutink.active      { background: rgba(230,57,70,0.85);   border-color: #E63946; color: #fff; }
+  .fbtn-deltawonen.active   { background: rgba(74,111,165,0.85);  border-color: #4A6FA5; color: #fff; }
+  .fbtn-hanzestrohm.active  { background: rgba(181,23,158,0.85);  border-color: #B5179E; color: #fff; }
+  .fbtn-windesheim.active   { background: rgba(114,9,183,0.85);   border-color: #7209B7; color: #fff; }
+
+  .fbtn-marketing  { background: linear-gradient(135deg, #0055ff 0%, #aa00ff 100%) !important; border-color: rgba(0,180,216,0.4); color: rgba(255,255,255,0.7); }
+  .fbtn-marketing.active  { box-shadow: 0 0 16px rgba(170,0,255,0.8) !important; }
+  .pill-marketing  { background: rgba(0,180,216,0.45); border-color: rgba(0,180,216,0.6); }
+
+  .fbtn-biltinintern  {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  .fbtn-biltinintern .partner-logo-inline img {
+    background: #08043a !important;
+    border-color: transparent !important;
+    min-width: 80px;
+    min-height: 44px;
+  }
+  .fbtn-biltinintern .partner-logo-inline img[src=""],
+  .fbtn-biltinintern .partner-logo-inline {
+    min-width: 80px;
+    min-height: 44px;
+  }
+  .fbtn-biltinintern.active { background: rgba(20,157,72,0.85); border-color: #149d48; color: #08043a; }
+
+
+  /* FILTER CONTAINER */
+  .filter-container {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 36px;
+  }
+
+  .filter-container-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .filter-container-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: #149d48;
+    border-radius: 2px;
+  }
+
+  .filter-container-title {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .filter-arrow {
+    font-size: 14px;
+    color: #fff;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .filter-container-title.collapsed .filter-arrow {
+    transform: rotate(180deg);
+  }
+
+  .filter-collapsible {
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    max-height: 1000px;
+    opacity: 1;
+  }
+
+  .filter-collapsible.collapsed {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  
+
+  .filter-toggle-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(20,157,72,0.25);
+    border: 1px solid rgba(20,157,72,0.5);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-left: auto;
+    margin-right: 10px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 4, 58, 0.72);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  body > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .fbtn-breman        { border-width: 2px; }
+  .fbtn-vandersluis   { border-width: 2px; }
+  .fbtn-heutink       { border-width: 2px; }
+  .fbtn-deltawonen    { border-width: 2px; }
+  .fbtn-hanzestrohm   { border-width: 2px; }
+  .fbtn-windesheim    { border-width: 2px; }
+  .fbtn-biltinintern  { border-width: 2px; }
+
+  .filter-btn[data-group="partner"] .partner-logo-inline img {
+    border-radius: 6px;
+  }
+
+  .fbtn-breman.active       { background: rgba(67,97,238,0.55);   border-color: #4361EE; color: #fff; }
+  .fbtn-vandersluis.active  { background: rgba(233,160,16,0.55);  border-color: #E9A010; color: #08043a; }
+  .fbtn-heutink.active      { background: rgba(230,57,70,0.55);   border-color: #E63946; color: #fff; }
+  .fbtn-deltawonen.active   { background: rgba(74,111,165,0.55);  border-color: #4A6FA5; color: #fff; }
+  .fbtn-hanzestrohm.active  { background: rgba(181,23,158,0.55);  border-color: #B5179E; color: #fff; }
+  .fbtn-windesheim.active   { background: rgba(114,9,183,0.55);   border-color: #7209B7; color: #fff; }
+  .fbtn-biltinintern.active { background: rgba(20,157,72,0.55);   border-color: #149d48; color: #08043a; }
+
+  .filter-btn[data-group="status"] {
+    background: transparent;
+    border: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    gap: 8px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .filter-btn[data-group="status"]:hover {
+    background: rgba(255,255,255,0.06);
+    border: none;
+  }
+
+  .filter-btn[data-group="status"].active-teal {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .filter-btn[data-group="status"] span {
+    width: 12px !important;
+    height: 12px !important;
+    flex-shrink: 0;
+  }
+
+  .filter-btn[data-group="jaar"] {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 7px 18px;
+  }
+
+  .filter-btn[data-group="jaar"]:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.4);
+  }
+
+  .filter-btn[data-group="jaar"].active-coral {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: #fff;
+  }
+
+  /* THEMA KNOPPEN — witte tegel stijl */
+  .filter-btn[data-group="thema"] {
+    background: rgba(255,255,255,0.97);
+    border: 2px solid transparent;
+    color: #08043a;
+    padding: 10px 14px 10px 10px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .filter-btn[data-group="thema"]::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .filter-btn[data-group="thema"]:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .fbtn-klimaatadaptief::before  { background: #2EC4B6; }
+  .fbtn-klimaatcascade::before   { background: #4CC9F0; }
+  .fbtn-biobased::before         { background: #06D6A0; }
+  .fbtn-circulair::before        { background: #8AC926; }
+  .fbtn-duurzame::before         { background: #FFD166; }
+  .fbtn-slim::before             { background: #9B7FFD; }
+  .fbtn-lectoraat::before        { background: #F72585; }
+  .fbtn-energie::before          { background: #FF9F1C; }
+  .fbtn-netcongestie::before     { background: #FF6B6B; }
+  .fbtn-marketing::before        { background: #00B4D8; }
+
+  /* Reset fbtn background/border - use tile style instead */
+
+
+  /* Active state - white tile with colored border and dot glow */
+  .fbtn-klimaatadaptief.active  { box-shadow: 0 0 16px rgba(0,119,255,0.8) !important; }
+  .fbtn-klimaatcascade.active  { box-shadow: 0 0 16px rgba(153,0,255,0.8) !important; }
+  .fbtn-biobased.active  { box-shadow: 0 0 16px rgba(255,0,153,0.8) !important; }
+  .fbtn-circulair.active  { box-shadow: 0 0 16px rgba(255,0,0,0.8) !important; }
+  .fbtn-duurzame.active  { box-shadow: 0 0 16px rgba(255,102,0,0.8) !important; }
+  .fbtn-slim.active  { box-shadow: 0 0 16px rgba(255,221,0,0.8) !important; }
+  .fbtn-lectoraat.active  { box-shadow: 0 0 16px rgba(0,204,68,0.8) !important; }
+  .fbtn-energie.active  { box-shadow: 0 0 16px rgba(0,204,255,0.8) !important; }
+  .fbtn-netcongestie.active  { box-shadow: 0 0 16px rgba(0,51,153,0.8) !important; }
+  .fbtn-marketing.active  { box-shadow: 0 0 16px rgba(170,0,255,0.8) !important; }
+
+  .fbtn-klimaatadaptief.active::before  { box-shadow: 0 0 6px #2EC4B6; }
+  .fbtn-klimaatcascade.active::before   { box-shadow: 0 0 6px #4CC9F0; }
+  .fbtn-biobased.active::before         { box-shadow: 0 0 6px #06D6A0; }
+  .fbtn-circulair.active::before        { box-shadow: 0 0 6px #8AC926; }
+  .fbtn-duurzame.active::before         { box-shadow: 0 0 6px #FFD166; }
+  .fbtn-slim.active::before             { box-shadow: 0 0 6px #9B7FFD; }
+  .fbtn-lectoraat.active::before        { box-shadow: 0 0 6px #F72585; }
+  .fbtn-energie.active::before          { box-shadow: 0 0 6px #FF9F1C; }
+  .fbtn-netcongestie.active::before     { box-shadow: 0 0 6px #FF6B6B; }
+  .fbtn-marketing.active::before        { box-shadow: 0 0 6px #00B4D8; }
+
+  .fbtn-klimaatadaptief { border-color: rgba(46,196,182,0.5) !important; color: #08043a !important; }
+  .fbtn-klimaatcascade  { border-color: rgba(76,201,240,0.5) !important; color: #08043a !important; }
+  .fbtn-biobased        { border-color: rgba(6,214,160,0.5) !important;  color: #08043a !important; }
+  .fbtn-circulair       { border-color: rgba(138,201,38,0.5) !important; color: #08043a !important; }
+  .fbtn-duurzame        { border-color: rgba(255,209,102,0.5) !important;color: #08043a !important; }
+  .fbtn-slim            { border-color: rgba(124,92,252,0.5) !important; color: #08043a !important; }
+  .fbtn-lectoraat       { border-color: rgba(247,37,133,0.5) !important; color: #08043a !important; }
+  .fbtn-energie         { border-color: rgba(255,159,28,0.5) !important; color: #08043a !important; }
+  .fbtn-netcongestie    { border-color: rgba(255,107,107,0.5) !important;color: #08043a !important; }
+  .fbtn-marketing       { border-color: rgba(0,180,216,0.5) !important;  color: #08043a !important; }
+
+  /* PARTNER KNOPPEN — alleen logo met gekleurde rand */
+  .filter-btn[data-group="partner"] {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filter-btn[data-group="partner"]:hover {
+    background: transparent !important;
+    transform: scale(1.15);
+  }
+
+  .filter-btn[data-group="partner"] .partner-logo-inline {
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0 !important;
+    display: inline-flex;
+  }
+
+  .filter-btn[data-group="partner"] .partner-logo-inline img {
+    height: 48px;
+    width: auto;
+    display: block;
+    border-radius: 10px;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+    border: 2.5px solid transparent;
+    mix-blend-mode: normal;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .fbtn-breman .partner-logo-inline img       { border-color: #4361EE; }
+  .fbtn-vandersluis .partner-logo-inline img  { border-color: #E9A010; }
+  .fbtn-heutink .partner-logo-inline img      { border-color: #E63946; }
+  .fbtn-deltawonen .partner-logo-inline img   { border-color: #4A6FA5; }
+  .fbtn-hanzestrohm .partner-logo-inline img  { border-color: #B5179E; }
+  .fbtn-windesheim .partner-logo-inline img   { border-color: #7209B7; }
+  .fbtn-biltinintern .partner-logo-inline img { border-color: #149d48; }
+
+  .fbtn-breman.active .partner-logo-inline img       { box-shadow: 0 0 10px rgba(67,97,238,0.7); }
+  .fbtn-vandersluis.active .partner-logo-inline img  { box-shadow: 0 0 10px rgba(233,160,16,0.7); }
+  .fbtn-heutink.active .partner-logo-inline img      { box-shadow: 0 0 10px rgba(230,57,70,0.7); }
+  .fbtn-deltawonen.active .partner-logo-inline img   { box-shadow: 0 0 10px rgba(74,111,165,0.7); }
+  .fbtn-hanzestrohm.active .partner-logo-inline img  { box-shadow: 0 0 10px rgba(181,23,158,0.7); }
+  .fbtn-windesheim.active .partner-logo-inline img   { box-shadow: 0 0 10px rgba(114,9,183,0.7); }
+  .fbtn-biltinintern.active .partner-logo-inline img { box-shadow: 0 0 10px rgba(20,157,72,0.7); }
+
+
+
+  .filter-btn[data-group="jaar"] {
+    border: none !important;
+    color: #08043a !important;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 8px 20px;
+    transition: all 0.2s ease;
+    opacity: 0.85;
+  }
+
+  .filter-btn[data-group="jaar"]:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .filter-btn[data-group="jaar"].active-coral {
+    opacity: 1;
+    box-shadow: 0 4px 16px rgba(124,92,252,0.5);
+  }
+
+  /* 2025 — blauw naar roze/paars */
+  .filter-btn[data-filter="2025"] { background: #b8d4f5; border-radius: 100px; color: #08043a; font-weight: 700; }
+
+  /* 2026 — groen naar blauw naar paars */
+  .filter-btn[data-filter="2026"] { background: #b8f0cc; border-radius: 100px; color: #08043a; font-weight: 700; }
+
+  /* THEMA KNOPPEN — volle kleur per thema */
+  .filter-btn[data-group="thema"] {
+    position: relative;
+    border: none !important;
+    color: #08043a !important;
+    padding: 8px 16px;
+    border-radius: 12px;
+    display: inline-flex;
     align-items: center;
     gap: 0;
     font-size: 13px;
@@ -762,7 +1480,7 @@
   .fbtn-marketing.active  { box-shadow: 0 0 16px rgba(170,0,255,0.8) !important; }
 
   /* Lichte overlay op thema knoppen, verdwijnt bij hover */
-  .filter-btn[data-group="thema"]::after {
+  .filter-btn[data-group="thema"]::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -782,7 +1500,7 @@
     overflow: hidden;
   }
 
-  .filter-btn[data-group="thema"]::after {
+  .filter-btn[data-group="thema"]::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -790,11 +1508,23 @@
     border-radius: 12px;
     transition: opacity 0.2s ease;
     pointer-events: none;
+    z-index: 0;
   }
 
-  .filter-btn[data-group="thema"]:hover::after,
-  .filter-btn[data-group="thema"].active::after {
+  .filter-btn[data-group="thema"]:hover::before,
+  .filter-btn[data-group="thema"].active::before {
     opacity: 0;
+  }
+
+  .filter-btn[data-group="thema"] {
+    z-index: 1;
+  }
+
+  .fbtn-klimaatadaptief, .fbtn-klimaatcascade, .fbtn-biobased, .fbtn-circulair,
+  .fbtn-duurzame, .fbtn-slim, .fbtn-lectoraat, .fbtn-energie, .fbtn-netcongestie,
+  .fbtn-marketing {
+    color: #08043a !important;
+    font-weight: 700;
   }
 </style>
 </head>
