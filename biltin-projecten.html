@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biltin Projecten</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #0B1638;
@@ -17,22 +17,23 @@
     --text-muted: #8A9BC5;
     --border: rgba(255,255,255,0.12);
   }
-
+ 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
   body {
-    background: var(--navy);
+    background: linear-gradient(135deg, #1a1a8c 0%, #4a1a8c 40%, #8c1a6e 100%);
+    position: relative;
     color: var(--text);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     min-height: 100vh;
     padding: 32px 24px;
   }
-
-  .filter-section { margin-bottom: 36px; }
-  .filter-group { margin-bottom: 16px; }
-
+ 
+  .filter-section { margin-bottom: 0; }
+  .filter-group { margin-bottom: 12px; }
+ 
   .filter-label {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -41,63 +42,70 @@
     margin-bottom: 10px;
     display: block;
   }
-
+ 
   .filter-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
+ 
   .filter-btn {
     background: rgba(255,255,255,0.07);
     border: 1px solid var(--border);
     color: var(--text-muted);
     padding: 7px 14px;
     border-radius: 100px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
     white-space: nowrap;
   }
-
+ 
   .filter-btn:hover { border-color: rgba(255,255,255,0.3); color: var(--text); }
   .filter-btn.active { color: #fff; }
   .filter-btn.active-teal { background: var(--teal); border-color: var(--teal); color: var(--navy); font-weight: 600; }
   .filter-btn.active-coral { background: var(--coral); border-color: var(--coral); color: #fff; }
-
+ 
   /* Thema filterknopjes — altijd zichtbare kleur */
-  /* Thema knoppen — exact zelfde als pills op kaarten */
-  .fbtn-klimaatadaptief  { background: rgba(46,196,182,0.45);  border-color: rgba(46,196,182,0.6);  color: #fff; }
-  .fbtn-klimaatcascade   { background: rgba(76,201,240,0.45);  border-color: rgba(76,201,240,0.6);  color: #fff; }
-  .fbtn-biobased         { background: rgba(6,214,160,0.45);   border-color: rgba(6,214,160,0.6);   color: #fff; }
-  .fbtn-circulair        { background: rgba(138,201,38,0.45);  border-color: rgba(138,201,38,0.6);  color: #fff; }
-  .fbtn-duurzame         { background: rgba(255,209,102,0.45); border-color: rgba(255,209,102,0.6); color: #fff; }
-  .fbtn-slim             { background: rgba(124,92,252,0.5);   border-color: rgba(124,92,252,0.7);  color: #fff; }
-  .fbtn-lectoraat        { background: rgba(247,37,133,0.45);  border-color: rgba(247,37,133,0.6);  color: #fff; }
-  .fbtn-energie          { background: rgba(255,159,28,0.45);  border-color: rgba(255,159,28,0.6);  color: #fff; }
-  .fbtn-netcongestie     { background: rgba(255,107,107,0.45); border-color: rgba(255,107,107,0.6); color: #fff; }
-
-  .fbtn-klimaatadaptief.active  { background: rgba(46,196,182,0.55);  border-color: #2EC4B6;  color: #08043a; }
-  .fbtn-klimaatcascade.active   { background: rgba(76,201,240,0.55);  border-color: #4CC9F0;  color: #08043a; }
-  .fbtn-biobased.active         { background: rgba(6,214,160,0.55);   border-color: #06D6A0;  color: #08043a; }
-  .fbtn-circulair.active        { background: rgba(138,201,38,0.55);  border-color: #8AC926;  color: #08043a; }
-  .fbtn-duurzame.active         { background: rgba(255,209,102,0.55); border-color: #FFD166;  color: #08043a; }
-  .fbtn-slim.active             { background: rgba(124,92,252,0.55);  border-color: #7C5CFC;  color: #fff; }
-  .fbtn-lectoraat.active        { background: rgba(247,37,133,0.55);  border-color: #F72585;  color: #fff; }
-  .fbtn-energie.active          { background: rgba(255,159,28,0.55);  border-color: #FF9F1C;  color: #08043a; }
-  .fbtn-netcongestie.active     { background: rgba(255,107,107,0.55); border-color: #FF6B6B;  color: #fff; }
-
+  /* Thema knoppen — inactief subtiel, actief oplichtend */
+  .fbtn-klimaatadaptief  { background: rgba(46,196,182,0.15);  border-color: rgba(46,196,182,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-klimaatcascade   { background: rgba(76,201,240,0.15);  border-color: rgba(76,201,240,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-biobased         { background: rgba(6,214,160,0.15);   border-color: rgba(6,214,160,0.4);   color: rgba(255,255,255,0.7); }
+  .fbtn-circulair        { background: rgba(138,201,38,0.15);  border-color: rgba(138,201,38,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-duurzame         { background: rgba(255,209,102,0.15); border-color: rgba(255,209,102,0.4); color: rgba(255,255,255,0.7); }
+  .fbtn-slim             { background: rgba(124,92,252,0.15);  border-color: rgba(124,92,252,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-lectoraat        { background: rgba(247,37,133,0.15);  border-color: rgba(247,37,133,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-energie          { background: rgba(255,159,28,0.15);  border-color: rgba(255,159,28,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-netcongestie     { background: rgba(255,107,107,0.15); border-color: rgba(255,107,107,0.4); color: rgba(255,255,255,0.7); }
+ 
+  .fbtn-klimaatadaptief.active  { background: #2EC4B6; border-color: #2EC4B6; color: #08043a; box-shadow: 0 0 12px rgba(46,196,182,0.6); }
+  .fbtn-klimaatcascade.active   { background: #4CC9F0; border-color: #4CC9F0; color: #08043a; box-shadow: 0 0 12px rgba(76,201,240,0.6); }
+  .fbtn-biobased.active         { background: #06D6A0; border-color: #06D6A0; color: #08043a; box-shadow: 0 0 12px rgba(6,214,160,0.6); }
+  .fbtn-circulair.active        { background: #8AC926; border-color: #8AC926; color: #08043a; box-shadow: 0 0 12px rgba(138,201,38,0.6); }
+  .fbtn-duurzame.active         { background: #FFD166; border-color: #FFD166; color: #08043a; box-shadow: 0 0 12px rgba(255,209,102,0.6); }
+  .fbtn-slim.active             { background: #7C5CFC; border-color: #7C5CFC; color: #fff;    box-shadow: 0 0 12px rgba(124,92,252,0.6); }
+  .fbtn-lectoraat.active        { background: #F72585; border-color: #F72585; color: #fff;    box-shadow: 0 0 12px rgba(247,37,133,0.6); }
+  .fbtn-energie.active          { background: #FF9F1C; border-color: #FF9F1C; color: #08043a; box-shadow: 0 0 12px rgba(255,159,28,0.6); }
+  .fbtn-netcongestie.active     { background: #FF6B6B; border-color: #FF6B6B; color: #fff;    box-shadow: 0 0 12px rgba(255,107,107,0.6); }
+ 
+  .filter-reset-row {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+ 
   .reset-btn {
-    background: transparent;
-    border: 1px dashed var(--border);
-    color: var(--text-muted);
-    padding: 7px 14px;
+    background: rgba(255,107,107,0.12);
+    border: 1px solid rgba(255,107,107,0.4);
+    color: #FF6B6B;
+    padding: 8px 20px;
     border-radius: 100px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
   }
-  .reset-btn:hover { color: var(--coral); border-color: var(--coral); }
-
+  .reset-btn:hover { background: rgba(255,107,107,0.25); border-color: #FF6B6B; }
+ 
   .results-bar {
     display: flex;
     align-items: center;
@@ -105,16 +113,16 @@
     padding-bottom: 16px;
     border-bottom: 1px solid var(--border);
   }
-
+ 
   .results-count { font-size: 14px; color: var(--text-muted); }
   .results-count span { color: var(--purple-light); font-weight: 600; }
-
+ 
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 20px;
   }
-
+ 
   /* CARD — full bleed afbeelding */
   .project-card {
     position: relative;
@@ -124,14 +132,14 @@
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-
+ 
   .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
   }
-
+ 
   .project-card.hidden { display: none; }
-
+ 
   .card-bg {
     position: absolute;
     inset: 0;
@@ -139,9 +147,9 @@
     background-position: center;
     transition: transform 0.5s ease;
   }
-
+ 
   .project-card:hover .card-bg { transform: scale(1.05); }
-
+ 
   .card-overlay {
     position: absolute;
     inset: 0;
@@ -152,7 +160,7 @@
       rgba(0,0,0,0.88) 100%
     );
   }
-
+ 
   .card-top {
     position: absolute;
     top: 16px;
@@ -162,7 +170,7 @@
     justify-content: space-between;
     align-items: flex-start;
   }
-
+ 
   .theme-pill {
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(6px);
@@ -178,7 +186,7 @@
     text-overflow: ellipsis;
     letter-spacing: 0.3px;
   }
-
+ 
   .year-pill {
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(6px);
@@ -189,7 +197,7 @@
     border-radius: 100px;
     flex-shrink: 0;
   }
-
+ 
   .card-content {
     position: absolute;
     inset: 0;
@@ -198,7 +206,7 @@
     justify-content: flex-end;
     padding: 22px;
   }
-
+ 
   .card-category {
     font-size: 11px;
     font-weight: 600;
@@ -207,16 +215,16 @@
     color: rgba(255,255,255,0.65);
     margin-bottom: 6px;
   }
-
+ 
   .card-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 19px;
     font-weight: 700;
     color: #fff;
     line-height: 1.25;
     margin-bottom: 8px;
   }
-
+ 
   .card-description {
     font-size: 13px;
     color: rgba(255,255,255,0.72);
@@ -227,13 +235,13 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
+ 
   .card-footer-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
+ 
   .card-btn {
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(8px);
@@ -241,7 +249,7 @@
     color: #fff;
     padding: 8px 18px;
     border-radius: 100px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
@@ -249,9 +257,9 @@
     text-decoration: none;
     display: inline-block;
   }
-
+ 
   .card-btn:hover { background: rgba(255,255,255,0.3); }
-
+ 
   .card-meta-row {
     display: flex;
     align-items: center;
@@ -259,7 +267,7 @@
     font-size: 12px;
     color: rgba(255,255,255,0.6);
   }
-
+ 
   .status-dot {
     width: 7px;
     height: 7px;
@@ -268,12 +276,12 @@
   }
   .status-dot.lopend { background: var(--green); box-shadow: 0 0 6px var(--green); }
   .status-dot.afgerond { background: rgba(255,255,255,0.4); }
-
+ 
   .no-results { display: none; text-align: center; padding: 60px 20px; color: var(--text-muted); grid-column: 1 / -1; }
   .no-results.visible { display: block; }
   .no-results-icon { font-size: 40px; margin-bottom: 12px; }
-  .no-results h3 { font-family: 'Syne', sans-serif; font-size: 18px; color: var(--text); margin-bottom: 8px; }
-
+  .no-results h3 { font-family: 'Work Sans', sans-serif; font-size: 18px; color: var(--text); margin-bottom: 8px; }
+ 
   /* AFBEELDINGEN
      Vervang de URL's hieronder door echte projectfoto's
      Gebruik: background-image: url('JOUW_FOTO_URL');       */
@@ -287,43 +295,43 @@
   .pill-lectoraat         { background: rgba(247,37,133,0.45);   border-color: rgba(247,37,133,0.6); }
   .pill-energie           { background: rgba(255,159,28,0.45);   border-color: rgba(255,159,28,0.6); }
   .pill-netcongestie      { background: rgba(255,107,107,0.45);  border-color: rgba(255,107,107,0.6); }
-
+ 
     .img-1, .img-2, .img-4, .img-5, .img-7, .img-8, .img-9, .img-10 { background: linear-gradient(135deg, #0d1a3a 0%, #111e45 100%); }
     .img-3 { background: linear-gradient(135deg, #0d1a3a 0%, #111e45 100%); }
     .img-6 { background: linear-gradient(135deg, #0d1a3a 0%, #111e45 100%); }
-
+ 
   /* PARTNER LOGO IN PIL */
   .filter-btn[data-group="partner"] {
     position: relative;
     transition: padding 0.3s ease;
     overflow: hidden;
   }
-
+ 
   .filter-btn[data-group="partner"] .partner-text {
     display: inline-block;
     transition: opacity 0.2s ease, max-width 0.3s ease;
     vertical-align: middle;
   }
-
+ 
   .filter-btn[data-group="partner"] .partner-logo-inline {
     display: none;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
   }
-
+ 
   .filter-btn[data-group="partner"].logo-hover .partner-text {
     display: none;
   }
-
+ 
   .filter-btn[data-group="partner"].logo-hover .partner-logo-inline {
     display: inline-flex;
   }
-
+ 
   .filter-btn[data-group="partner"].logo-hover {
     padding: 8px 16px;
   }
-
+ 
   .partner-logo-inline img {
     height: 48px;
     width: auto;
@@ -333,10 +341,10 @@
     mix-blend-mode: screen;
     border-radius: 8px;
   }
-
+ 
   .partner-logo-inline img[src=""],
   .partner-logo-inline img:not([src]) { display: none; }
-
+ 
   /* PARTNER FILTERKNOPJES — eigen kleuren los van thema's */
   .fbtn-breman        { border-color: rgba(67,97,238,0.5);   color: #4361EE; }
   .fbtn-vandersluis   { border-color: rgba(233,160,16,0.5);  color: #E9A010; }
@@ -344,25 +352,270 @@
   .fbtn-deltawonen    { border-color: rgba(74,111,165,0.5);  color: #4A6FA5; }
   .fbtn-hanzestrohm   { border-color: rgba(181,23,158,0.5);  color: #B5179E; }
   .fbtn-windesheim    { border-color: rgba(114,9,183,0.5);   color: #7209B7; }
-
+ 
   .fbtn-breman.active       { background: rgba(67,97,238,0.85);   border-color: #4361EE; color: #fff; }
   .fbtn-vandersluis.active  { background: rgba(233,160,16,0.85);  border-color: #E9A010; color: #0B1638; }
   .fbtn-heutink.active      { background: rgba(230,57,70,0.85);   border-color: #E63946; color: #fff; }
   .fbtn-deltawonen.active   { background: rgba(74,111,165,0.85);  border-color: #4A6FA5; color: #fff; }
   .fbtn-hanzestrohm.active  { background: rgba(181,23,158,0.85);  border-color: #B5179E; color: #fff; }
   .fbtn-windesheim.active   { background: rgba(114,9,183,0.85);   border-color: #7209B7; color: #fff; }
-
-  .fbtn-marketing  { background: rgba(0,180,216,0.45); border-color: rgba(0,180,216,0.6); color: #fff; }
-  .fbtn-marketing.active { background: rgba(0,180,216,0.55); border-color: #00B4D8; color: #08043a; }
+ 
+  .fbtn-marketing  { background: rgba(0,180,216,0.15); border-color: rgba(0,180,216,0.4); color: rgba(255,255,255,0.7); }
+  .fbtn-marketing.active { background: #00B4D8; border-color: #00B4D8; color: #08043a; box-shadow: 0 0 12px rgba(0,180,216,0.6); }
   .pill-marketing  { background: rgba(0,180,216,0.45); border-color: rgba(0,180,216,0.6); }
-
-  .fbtn-biltinintern  { border-color: rgba(20,157,72,0.5); color: #149d48; }
+ 
+  .fbtn-biltinintern  { border-color: rgba(20,157,72,0.5); color: #149d48; background: rgba(20,157,72,0.25); }
   .fbtn-biltinintern.active { background: rgba(20,157,72,0.85); border-color: #149d48; color: #08043a; }
   .fbtn-breman .partner-logo-inline img { height: 36px; mix-blend-mode: screen; }
+ 
+  /* FILTER CONTAINER */
+  .filter-container {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 36px;
+  }
+ 
+  .filter-container-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+ 
+  .filter-container-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: #149d48;
+    border-radius: 2px;
+  }
+ 
+  .filter-container-title {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+ 
+  .filter-arrow {
+    font-size: 14px;
+    color: #fff;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+ 
+  .filter-container-title.collapsed .filter-arrow {
+    transform: rotate(180deg);
+  }
+ 
+  .filter-collapsible {
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    max-height: 1000px;
+    opacity: 1;
+  }
+ 
+  .filter-collapsible.collapsed {
+    max-height: 0;
+    opacity: 0;
+  }
+ 
+  
+ 
+  .filter-toggle-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(20,157,72,0.25);
+    border: 1px solid rgba(20,157,72,0.5);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-left: auto;
+    margin-right: 10px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+ 
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 4, 58, 0.72);
+    z-index: 0;
+    pointer-events: none;
+  }
+ 
+  body > * {
+    position: relative;
+    z-index: 1;
+  }
+ 
+  .fbtn-breman        { border-width: 2px; }
+  .fbtn-vandersluis   { border-width: 2px; }
+  .fbtn-heutink       { border-width: 2px; }
+  .fbtn-deltawonen    { border-width: 2px; }
+  .fbtn-hanzestrohm   { border-width: 2px; }
+  .fbtn-windesheim    { border-width: 2px; }
+  .fbtn-biltinintern  { border-width: 2px; }
+ 
+  .filter-btn[data-group="partner"] .partner-logo-inline img {
+    border-radius: 6px;
+  }
+ 
+  .fbtn-breman.active       { background: rgba(67,97,238,0.55);   border-color: #4361EE; color: #fff; }
+  .fbtn-vandersluis.active  { background: rgba(233,160,16,0.55);  border-color: #E9A010; color: #08043a; }
+  .fbtn-heutink.active      { background: rgba(230,57,70,0.55);   border-color: #E63946; color: #fff; }
+  .fbtn-deltawonen.active   { background: rgba(74,111,165,0.55);  border-color: #4A6FA5; color: #fff; }
+  .fbtn-hanzestrohm.active  { background: rgba(181,23,158,0.55);  border-color: #B5179E; color: #fff; }
+  .fbtn-windesheim.active   { background: rgba(114,9,183,0.55);   border-color: #7209B7; color: #fff; }
+  .fbtn-biltinintern.active { background: rgba(20,157,72,0.55);   border-color: #149d48; color: #08043a; }
+ 
+  .filter-btn[data-group="status"] {
+    background: transparent;
+    border: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    gap: 8px;
+    display: inline-flex;
+    align-items: center;
+  }
+ 
+  .filter-btn[data-group="status"]:hover {
+    background: rgba(255,255,255,0.06);
+    border: none;
+  }
+ 
+  .filter-btn[data-group="status"].active-teal {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+  }
+ 
+  .filter-btn[data-group="status"] span {
+    width: 12px !important;
+    height: 12px !important;
+    flex-shrink: 0;
+  }
+ 
+  .filter-btn[data-group="jaar"] {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 7px 18px;
+  }
+ 
+  .filter-btn[data-group="jaar"]:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.4);
+  }
+ 
+  .filter-btn[data-group="jaar"].active-coral {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: #fff;
+  }
+ 
+  /* THEMA KNOPPEN — witte tegel stijl */
+  .filter-btn[data-group="thema"] {
+    background: rgba(255,255,255,0.97);
+    border: 2px solid transparent;
+    color: #08043a;
+    padding: 10px 14px 10px 10px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+ 
+  .filter-btn[data-group="thema"]::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+ 
+  .filter-btn[data-group="thema"]:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+ 
+  .fbtn-klimaatadaptief::before  { background: #2EC4B6; }
+  .fbtn-klimaatcascade::before   { background: #4CC9F0; }
+  .fbtn-biobased::before         { background: #06D6A0; }
+  .fbtn-circulair::before        { background: #8AC926; }
+  .fbtn-duurzame::before         { background: #FFD166; }
+  .fbtn-slim::before             { background: #9B7FFD; }
+  .fbtn-lectoraat::before        { background: #F72585; }
+  .fbtn-energie::before          { background: #FF9F1C; }
+  .fbtn-netcongestie::before     { background: #FF6B6B; }
+  .fbtn-marketing::before        { background: #00B4D8; }
+ 
+  /* Reset fbtn background/border - use tile style instead */
+ 
+ 
+  /* Active state - white tile with colored border and dot glow */
+  .fbtn-klimaatadaptief.active  { background: rgba(255,255,255,1) !important; border-color: #2EC4B6 !important; color: #08043a !important; box-shadow: 0 0 10px rgba(46,196,182,0.4); }
+  .fbtn-klimaatcascade.active   { background: rgba(255,255,255,1) !important; border-color: #4CC9F0 !important; color: #08043a !important; box-shadow: 0 0 10px rgba(76,201,240,0.4); }
+  .fbtn-biobased.active         { background: rgba(255,255,255,1) !important; border-color: #06D6A0 !important; color: #08043a !important; box-shadow: 0 0 10px rgba(6,214,160,0.4); }
+  .fbtn-circulair.active        { background: rgba(255,255,255,1) !important; border-color: #8AC926 !important; color: #08043a !important; box-shadow: 0 0 10px rgba(138,201,38,0.4); }
+  .fbtn-duurzame.active         { background: rgba(255,255,255,1) !important; border-color: #FFD166 !important; color: #08043a !important; box-shadow: 0 0 10px rgba(255,209,102,0.4); }
+  .fbtn-slim.active             { background: rgba(255,255,255,1) !important; border-color: #9B7FFD !important; color: #08043a !important; box-shadow: 0 0 10px rgba(124,92,252,0.4); }
+  .fbtn-lectoraat.active        { background: rgba(255,255,255,1) !important; border-color: #F72585 !important; color: #08043a !important; box-shadow: 0 0 10px rgba(247,37,133,0.4); }
+  .fbtn-energie.active          { background: rgba(255,255,255,1) !important; border-color: #FF9F1C !important; color: #08043a !important; box-shadow: 0 0 10px rgba(255,159,28,0.4); }
+  .fbtn-netcongestie.active     { background: rgba(255,255,255,1) !important; border-color: #FF6B6B !important; color: #08043a !important; box-shadow: 0 0 10px rgba(255,107,107,0.4); }
+  .fbtn-marketing.active        { background: rgba(255,255,255,1) !important; border-color: #00B4D8 !important; color: #08043a !important; box-shadow: 0 0 10px rgba(0,180,216,0.4); }
+ 
+  .fbtn-klimaatadaptief.active::before  { box-shadow: 0 0 6px #2EC4B6; }
+  .fbtn-klimaatcascade.active::before   { box-shadow: 0 0 6px #4CC9F0; }
+  .fbtn-biobased.active::before         { box-shadow: 0 0 6px #06D6A0; }
+  .fbtn-circulair.active::before        { box-shadow: 0 0 6px #8AC926; }
+  .fbtn-duurzame.active::before         { box-shadow: 0 0 6px #FFD166; }
+  .fbtn-slim.active::before             { box-shadow: 0 0 6px #9B7FFD; }
+  .fbtn-lectoraat.active::before        { box-shadow: 0 0 6px #F72585; }
+  .fbtn-energie.active::before          { box-shadow: 0 0 6px #FF9F1C; }
+  .fbtn-netcongestie.active::before     { box-shadow: 0 0 6px #FF6B6B; }
+  .fbtn-marketing.active::before        { box-shadow: 0 0 6px #00B4D8; }
+ 
+  .fbtn-klimaatadaptief { border-color: rgba(46,196,182,0.5) !important; color: #08043a !important; }
+  .fbtn-klimaatcascade  { border-color: rgba(76,201,240,0.5) !important; color: #08043a !important; }
+  .fbtn-biobased        { border-color: rgba(6,214,160,0.5) !important;  color: #08043a !important; }
+  .fbtn-circulair       { border-color: rgba(138,201,38,0.5) !important; color: #08043a !important; }
+  .fbtn-duurzame        { border-color: rgba(255,209,102,0.5) !important;color: #08043a !important; }
+  .fbtn-slim            { border-color: rgba(124,92,252,0.5) !important; color: #08043a !important; }
+  .fbtn-lectoraat       { border-color: rgba(247,37,133,0.5) !important; color: #08043a !important; }
+  .fbtn-energie         { border-color: rgba(255,159,28,0.5) !important; color: #08043a !important; }
+  .fbtn-netcongestie    { border-color: rgba(255,107,107,0.5) !important;color: #08043a !important; }
+  .fbtn-marketing       { border-color: rgba(0,180,216,0.5) !important;  color: #08043a !important; }
 </style>
 </head>
 <body>
-
+ 
+<div class="filter-container">
+<div class="filter-container-title">Filters <span class="filter-toggle-text">Verberg filters</span><span class="filter-arrow">▲</span></div>
+<div class="filter-collapsible" id="filter-collapsible">
 <div class="filter-section">
   <div class="filter-group">
     <span class="filter-label">Thema</span>
@@ -382,20 +635,20 @@
   <div class="filter-group">
     <span class="filter-label">Partner</span>
     <div class="filter-tags">
-      <button data-filter="Breman" data-group="partner" class="filter-btn fbtn-breman"><span class="partner-logo-inline" style="display:none"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/breman-logo.png" alt="Breman"></span><span class="partner-text">Breman</span></button>
-      <button data-filter="Van der Sluis" data-group="partner" class="filter-btn fbtn-vandersluis"><span class="partner-logo-inline" style="display:none"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/vandersluis-logo.png" alt="Van der Sluis"></span><span class="partner-text">Van der Sluis</span></button>
-      <button data-filter="Heutink" data-group="partner" class="filter-btn fbtn-heutink"><span class="partner-logo-inline" style="display:none"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/heutink-logo.png" alt="Heutink"></span><span class="partner-text">Heutink</span></button>
-      <button data-filter="Deltawonen" data-group="partner" class="filter-btn fbtn-deltawonen"><span class="partner-logo-inline" style="display:none"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/deltawonen-logo.png" alt="Deltawonen"></span><span class="partner-text">Deltawonen</span></button>
-      <button data-filter="Hanzestrohm" data-group="partner" class="filter-btn fbtn-hanzestrohm"><span class="partner-logo-inline" style="display:none"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/hanzestrohm-logo.png" alt="Hanzestrohm"></span><span class="partner-text">Hanzestrohm</span></button>
-      <button data-filter="Windesheim" data-group="partner" class="filter-btn fbtn-windesheim"><span class="partner-logo-inline" style="display:none"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/windesheim-logo.png" alt="Windesheim"></span><span class="partner-text">Windesheim</span></button>
+      <button data-filter="Breman" data-group="partner" class="filter-btn fbtn-breman"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/breman-logo.png" alt="Breman"></span></button>
+      <button data-filter="Van der Sluis" data-group="partner" class="filter-btn fbtn-vandersluis"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/vandersluis-logo.png" alt="Van der Sluis"></span></button>
+      <button data-filter="Heutink" data-group="partner" class="filter-btn fbtn-heutink"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/heutink-logo.png" alt="Heutink"></span></button>
+      <button data-filter="Deltawonen" data-group="partner" class="filter-btn fbtn-deltawonen"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/deltawonen-logo.png" alt="Deltawonen"></span></button>
+      <button data-filter="Hanzestrohm" data-group="partner" class="filter-btn fbtn-hanzestrohm"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/hanzestrohm-logo.png" alt="Hanzestrohm"></span></button>
+      <button data-filter="Windesheim" data-group="partner" class="filter-btn fbtn-windesheim"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/windesheim-logo.png" alt="Windesheim"></span></button>
       <button class="filter-btn fbtn-biltinintern" data-filter="Biltin" data-group="partner">Biltin intern</button>
     </div>
   </div>
   <div class="filter-group">
     <span class="filter-label">Status</span>
     <div class="filter-tags">
-      <button class="filter-btn" data-filter="Lopend" data-group="status">Lopende projecten</button>
-      <button class="filter-btn" data-filter="Afgerond" data-group="status">Afgeronde projecten</button>
+      <button class="filter-btn" data-filter="Lopend" data-group="status"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#06D6A0;box-shadow:0 0 6px #06D6A0;margin-right:6px;vertical-align:middle;"></span>Lopende projecten</button>
+      <button class="filter-btn" data-filter="Afgerond" data-group="status"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);margin-right:6px;vertical-align:middle;"></span>Afgeronde projecten</button>
     </div>
   </div>
   <div class="filter-group">
@@ -403,17 +656,21 @@
     <div class="filter-tags">
       <button class="filter-btn" data-filter="2025" data-group="jaar">2025</button>
       <button class="filter-btn" data-filter="2026" data-group="jaar">2026</button>
-      <button class="reset-btn" id="reset-btn">✕ Filters wissen</button>
     </div>
   </div>
 </div>
-
+  <div class="filter-reset-row">
+    <button class="reset-btn" id="reset-btn">✕ Filters wissen</button>
+  </div>
+</div>
+</div>
+ 
 <div class="results-bar">
   <div class="results-count"><span id="count">20</span> projecten</div>
 </div>
-
+ 
 <div class="projects-grid" id="projects-grid">
-
+ 
   <div class="project-card" data-thema="Klimaatadaptief" data-status="Lopend" data-jaar="2025" data-partner="Breman">
     <div class="card-bg img-1"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-klimaatadaptief">Klimaatadaptief</span><span class="year-pill">2025</span></div>
@@ -427,7 +684,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Biobased bouwen" data-status="Lopend" data-jaar="2025" data-partner="Van der Sluis">
     <div class="card-bg img-2"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-biobased">Biobased bouwen</span><span class="year-pill">2025</span></div>
@@ -441,7 +698,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Marketing en strategie" data-status="Afgerond" data-jaar="2025" data-partner="Biltin">
     <div class="card-bg" style="background-image: url('https://biltin.sharepoint.com/Gedeelde%20documenten/Foto%20Sven.JPG'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-marketing">Marketing en strategie</span><span class="year-pill">2025</span></div>
@@ -450,12 +707,12 @@
       <div class="card-title">Aanloop studenten Biltin</div>
       <div class="card-description">Hoe kan Biltin studenten eerder en meer aantrekken.</div>
       <div class="card-footer-row">
-        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Project-1.aspx" target="_blank">Bekijk project</a>
+        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Project-1.aspx" target="_top">Bekijk project</a>
         <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Slim digitaal en datagedreven" data-status="Lopend" data-jaar="2026" data-partner="Heutink">
     <div class="card-bg img-4"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-slim">Slim digitaal</span><span class="year-pill">2026</span></div>
@@ -469,7 +726,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Netcongestie" data-status="Lopend" data-jaar="2026" data-partner="Deltawonen">
     <div class="card-bg img-5"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-netcongestie">Netcongestie</span><span class="year-pill">2026</span></div>
@@ -483,7 +740,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Duurzame materialen" data-status="Afgerond" data-jaar="2025" data-partner="Breman">
     <div class="card-bg img-6"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-duurzame">Duurzame materialen</span><span class="year-pill">2025</span></div>
@@ -497,7 +754,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Minder energieverbruik" data-status="Lopend" data-jaar="2025" data-partner="Windesheim">
     <div class="card-bg img-7"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-energie">Minder energieverbruik</span><span class="year-pill">2025</span></div>
@@ -511,7 +768,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Klimaatcascade" data-status="Lopend" data-jaar="2026" data-partner="Windesheim">
     <div class="card-bg" style="background-image: url('https://biltin.sharepoint.com/Gedeelde%20documenten/Foto-jan.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-klimaatcascade">Klimaatcascade</span><span class="theme-pill pill-lectoraat" style="margin-left:4px; font-size:10px;">Lectoraat energietransitie</span><span class="year-pill">2026</span></div>
@@ -520,12 +777,12 @@
       <div class="card-title">Klimaatcascade doorontwikkeling</div>
       <div class="card-description">In dit project wordt er door ontwikkelt aan de klimaatcascade en tests uitgevoerd.</div>
       <div class="card-footer-row">
-        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Project-lopend.aspx" target="_blank">Bekijk project</a>
+        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Project-lopend.aspx" target="_top">Bekijk project</a>
         <div class="card-meta-row"><span class="status-dot lopend"></span><span>Lopend</span></div>
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Lectoraat energietransitie" data-status="Lopend" data-jaar="2025" data-partner="Van der Sluis">
     <div class="card-bg img-9"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-lectoraat">Lectoraat energietransitie</span><span class="year-pill">2025</span></div>
@@ -539,7 +796,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Biobased bouwen" data-status="Afgerond" data-jaar="2025" data-partner="Heutink">
     <div class="card-bg img-10"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-biobased">Biobased bouwen</span><span class="year-pill">2025</span></div>
@@ -553,7 +810,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Circulair" data-status="Lopend" data-jaar="2026" data-partner="Deltawonen">
     <div class="card-bg img-1"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-circulair">Circulair</span><span class="year-pill">2026</span></div>
@@ -567,7 +824,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Slim digitaal en datagedreven" data-status="Afgerond" data-jaar="2025" data-partner="Windesheim">
     <div class="card-bg img-2"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-slim">Slim digitaal</span><span class="year-pill">2025</span></div>
@@ -581,7 +838,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Klimaatadaptief" data-status="Lopend" data-jaar="2026" data-partner="Deltawonen">
     <div class="card-bg img-3"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-klimaatadaptief">Klimaatadaptief</span><span class="year-pill">2026</span></div>
@@ -595,7 +852,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Netcongestie" data-status="Afgerond" data-jaar="2025" data-partner="Breman">
     <div class="card-bg img-4"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-netcongestie">Netcongestie</span><span class="year-pill">2025</span></div>
@@ -609,7 +866,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Duurzame materialen" data-status="Lopend" data-jaar="2026" data-partner="Van der Sluis">
     <div class="card-bg img-5"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-duurzame">Duurzame materialen</span><span class="year-pill">2026</span></div>
@@ -623,7 +880,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Lectoraat energietransitie" data-status="Afgerond" data-jaar="2025" data-partner="Windesheim">
     <div class="card-bg img-6"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-lectoraat">Lectoraat energietransitie</span><span class="year-pill">2025</span></div>
@@ -637,7 +894,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Minder energieverbruik" data-status="Lopend" data-jaar="2026" data-partner="Heutink">
     <div class="card-bg img-7"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-energie">Minder energieverbruik</span><span class="year-pill">2026</span></div>
@@ -651,7 +908,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Klimaatcascade" data-status="Afgerond" data-jaar="2025" data-partner="Windesheim">
     <div class="card-bg" style="background-image: url('https://biltin.sharepoint.com/Gedeelde%20documenten/Foto-jan-opbouw.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-klimaatcascade">Klimaatcascade</span><span class="theme-pill pill-lectoraat" style="margin-left:4px; font-size:10px;">Lectoraat energietransitie</span><span class="year-pill">2025</span></div>
@@ -660,12 +917,12 @@
       <div class="card-title">Klimaatcascade bouwen</div>
       <div class="card-description">Realisatie van klimaatcascade.</div>
       <div class="card-footer-row">
-        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Project-2.aspx" target="_blank">Bekijk project</a>
+        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Project-2.aspx" target="_top">Bekijk project</a>
         <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Slim digitaal en datagedreven" data-status="Lopend" data-jaar="2026" data-partner="Hanzestrohm">
     <div class="card-bg img-9"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-slim">Slim digitaal</span><span class="year-pill">2026</span></div>
@@ -679,7 +936,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="project-card" data-thema="Circulair" data-status="Lopend" data-jaar="2025" data-partner="Breman">
     <div class="card-bg img-10"></div><div class="card-overlay"></div>
     <div class="card-top"><span class="theme-pill pill-circulair">Circulair</span><span class="year-pill">2025</span></div>
@@ -693,19 +950,19 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="no-results" id="no-results">
     <div class="no-results-icon">🔍</div>
     <h3>Geen projecten gevonden</h3>
     <p>Probeer een andere filtercombinatie.</p>
   </div>
-
+ 
 </div>
-
+ 
 <script>
   const activeFilters = { thema: null, status: null, jaar: null, partner: null };
   const groupColors = { thema: 'active', status: 'active-teal', jaar: 'active-coral' };
-
+ 
   document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
     btn.addEventListener('click', () => {
       const group = btn.dataset.group;
@@ -716,12 +973,12 @@
       } else {
         document.querySelectorAll(`.filter-btn[data-group="${group}"]`).forEach(b => b.classList.remove('active', 'active-teal', 'active-coral'));
         activeFilters[group] = filter;
-        btn.classList.add(group === 'status' ? 'active-teal' : group === 'jaar' ? 'active-coral' : group === 'partner' ? 'active-teal' : 'active');
+        btn.classList.add(group === 'status' ? 'active-teal' : group === 'jaar' ? 'active-coral' : 'active');
       }
       applyFilters();
     });
   });
-
+ 
   document.getElementById('reset-btn').addEventListener('click', () => {
     activeFilters.thema = null;
     activeFilters.status = null;
@@ -729,7 +986,7 @@
     document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active', 'active-teal', 'active-coral'));
     applyFilters();
   });
-
+ 
   function applyFilters() {
     const cards = document.querySelectorAll('.project-card');
     let visible = 0;
@@ -748,20 +1005,17 @@
     document.getElementById('count').textContent = visible;
     document.getElementById('no-results').classList.toggle('visible', visible === 0);
   }
-
-  // Partner logo hover via JS (voor iframe compatibiliteit)
-  document.querySelectorAll('.filter-btn[data-group="partner"]').forEach(btn => {
-    const logo = btn.querySelector('.partner-logo-inline');
-    const text = btn.querySelector('.partner-text');
-    if (!logo || !text) return;
-    btn.addEventListener('mouseenter', () => {
-      logo.style.display = 'inline-flex';
-      text.style.display = 'none';
-    });
-    btn.addEventListener('mouseleave', () => {
-      logo.style.display = 'none';
-      text.style.display = 'inline-block';
-    });
+ 
+ 
+ 
+  // Inklapbare filters
+  const filterTitle = document.querySelector('.filter-container-title');
+  const filterCollapsible = document.getElementById('filter-collapsible');
+  const filterToggleText = document.querySelector('.filter-toggle-text');
+  filterTitle.addEventListener('click', () => {
+    filterTitle.classList.toggle('collapsed');
+    filterCollapsible.classList.toggle('collapsed');
+    filterToggleText.textContent = filterCollapsible.classList.contains('collapsed') ? 'Toon filters' : 'Verberg filters';
   });
 </script>
 </body>
