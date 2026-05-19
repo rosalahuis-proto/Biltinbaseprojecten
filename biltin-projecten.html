@@ -616,8 +616,11 @@
   .filter-btn[data-group="partner"] {
     background: transparent !important;
     border: none !important;
-    padding: 4px !important;
+    padding: 0 !important;
     border-radius: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .filter-btn[data-group="partner"]:hover {
@@ -629,6 +632,7 @@
     border-radius: 10px;
     overflow: hidden;
     padding: 0 !important;
+    display: inline-flex;
   }
 
   .filter-btn[data-group="partner"] .partner-logo-inline img {
@@ -636,8 +640,9 @@
     width: auto;
     display: block;
     border-radius: 10px;
-    padding: 6px 10px;
-    background: rgba(255,255,255,0.92);
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
     border: 2.5px solid transparent;
     mix-blend-mode: normal;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -659,7 +664,7 @@
   .fbtn-windesheim.active .partner-logo-inline img   { box-shadow: 0 0 10px rgba(114,9,183,0.7); }
   .fbtn-biltinintern.active .partner-logo-inline img { box-shadow: 0 0 10px rgba(20,157,72,0.7); }
 
-  .fbtn-breman .partner-logo-inline img { height: 36px; }
+
 
   .filter-btn[data-group="jaar"] {
     border: none !important;
