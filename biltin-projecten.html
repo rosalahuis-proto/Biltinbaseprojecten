@@ -364,7 +364,22 @@
   .fbtn-marketing.active  { box-shadow: 0 0 16px rgba(170,0,255,0.8) !important; }
   .pill-marketing  { background: rgba(0,180,216,0.45); border-color: rgba(0,180,216,0.6); }
 
-  .fbtn-biltinintern  { border-color: rgba(20,157,72,0.5); color: #149d48; background: rgba(20,157,72,0.25); }
+  .fbtn-biltinintern  {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  .fbtn-biltinintern .partner-logo-inline img {
+    background: #08043a !important;
+    border-color: transparent !important;
+    min-width: 80px;
+    min-height: 44px;
+  }
+  .fbtn-biltinintern .partner-logo-inline img[src=""],
+  .fbtn-biltinintern .partner-logo-inline {
+    min-width: 80px;
+    min-height: 44px;
+  }
   .fbtn-biltinintern.active { background: rgba(20,157,72,0.85); border-color: #149d48; color: #08043a; }
   .fbtn-breman .partner-logo-inline img { height: 36px; mix-blend-mode: screen; }
 
@@ -751,7 +766,27 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.35);
+    border-radius: 12px;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  .filter-btn[data-group="thema"]:hover::after,
+  .filter-btn[data-group="thema"].active::after {
+    opacity: 0;
+  }
+
+  .filter-btn[data-group="thema"] {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .filter-btn[data-group="thema"]::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.35);
     border-radius: 12px;
     transition: opacity 0.2s ease;
     pointer-events: none;
@@ -793,7 +828,7 @@
       <button data-filter="Deltawonen" data-group="partner" class="filter-btn fbtn-deltawonen"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/deltawonen-logo.png" alt="Deltawonen"></span></button>
       <button data-filter="Hanzestrohm" data-group="partner" class="filter-btn fbtn-hanzestrohm"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/hanzestrohm-logo.png" alt="Hanzestrohm"></span></button>
       <button data-filter="Windesheim" data-group="partner" class="filter-btn fbtn-windesheim"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/windesheim-logo.png" alt="Windesheim"></span></button>
-      <button class="filter-btn fbtn-biltinintern" data-filter="Biltin" data-group="partner">Biltin intern</button>
+      <button class="filter-btn fbtn-biltinintern" data-filter="Biltin" data-group="partner"><span class="partner-logo-inline" style="display:inline-flex; max-width:120px; opacity:1; margin-right:0; background:#08043a; border-radius:10px; border:none; align-items:center; justify-content:center; min-width:90px; height:44px;"><img onerror="this.style.display='none'" src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/biltin-logo.jpg" alt="Biltin intern" style="max-height:32px; width:auto; padding:4px 8px; background:transparent; border:none;"></span></button>
     </div>
   </div>
   <div class="filter-group">
