@@ -66,15 +66,15 @@
 
   /* Thema filterknopjes — altijd zichtbare kleur */
   /* Thema knoppen — inactief subtiel, actief oplichtend */
-  .fbtn-klimaatadaptief  { background: linear-gradient(135deg, #00cc44 0%, #0077ff 100%) !important;  border-color: rgba(46,196,182,0.4);  color: rgba(255,255,255,0.7); }
-  .fbtn-klimaatcascade  { background: linear-gradient(135deg, #0077ff 0%, #9900ff 100%) !important;  border-color: rgba(76,201,240,0.4);  color: rgba(255,255,255,0.7); }
-  .fbtn-biobased  { background: linear-gradient(135deg, #9900ff 0%, #ff0099 100%) !important;   border-color: rgba(6,214,160,0.4);   color: rgba(255,255,255,0.7); }
-  .fbtn-circulair  { background: linear-gradient(135deg, #ff0099 0%, #ff0000 100%) !important;  border-color: rgba(138,201,38,0.4);  color: rgba(255,255,255,0.7); }
-  .fbtn-duurzame  { background: linear-gradient(135deg, #ff0000 0%, #ff6600 100%) !important; border-color: rgba(255,209,102,0.4); color: rgba(255,255,255,0.7); }
-  .fbtn-slim  { background: linear-gradient(135deg, #ff6600 0%, #ffdd00 100%) !important;  border-color: rgba(124,92,252,0.4);  color: rgba(255,255,255,0.7); }
-  .fbtn-lectoraat  { background: linear-gradient(135deg, #ffdd00 0%, #00cc44 100%) !important;  border-color: rgba(247,37,133,0.4);  color: rgba(255,255,255,0.7); }
-  .fbtn-energie  { background: linear-gradient(135deg, #00bb55 0%, #00ccff 100%) !important;  border-color: rgba(255,159,28,0.4);  color: rgba(255,255,255,0.7); }
-  .fbtn-netcongestie  { background: linear-gradient(135deg, #66ddff 0%, #0077cc 100%) !important; border-color: rgba(255,107,107,0.4); color: rgba(255,255,255,0.7); }
+  .fbtn-klimaatadaptief  { background: #ff66aa !important;  border-color: rgba(46,196,182,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-klimaatcascade  { background: #00aaff !important;  border-color: rgba(76,201,240,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-biobased  { background: #7700ff !important;   border-color: rgba(6,214,160,0.4);   color: rgba(255,255,255,0.7); }
+  .fbtn-circulair  { background: #cc88ff !important;  border-color: rgba(138,201,38,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-duurzame  { background: #22cc66 !important; border-color: rgba(255,209,102,0.4); color: rgba(255,255,255,0.7); }
+  .fbtn-slim  { background: #ff4400 !important;  border-color: rgba(124,92,252,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-lectoraat  { background: #ff9900 !important;  border-color: rgba(247,37,133,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-energie  { background: #88ff00 !important;  border-color: rgba(255,159,28,0.4);  color: rgba(255,255,255,0.7); }
+  .fbtn-netcongestie  { background: #ff0044 !important; border-color: rgba(255,107,107,0.4); color: rgba(255,255,255,0.7); }
 
   .fbtn-klimaatadaptief.active  { box-shadow: 0 0 16px rgba(0,119,255,0.8) !important; }
   .fbtn-klimaatcascade.active  { box-shadow: 0 0 16px rgba(153,0,255,0.8) !important; }
@@ -359,14 +359,15 @@
   .fbtn-hanzestrohm.active  { background: rgba(181,23,158,0.85);  border-color: #B5179E; color: #fff; }
   .fbtn-windesheim.active   { background: rgba(114,9,183,0.85);   border-color: #7209B7; color: #fff; }
 
-  .fbtn-marketing  { background: linear-gradient(135deg, #0055ff 0%, #aa00ff 100%) !important; border-color: rgba(0,180,216,0.4); color: rgba(255,255,255,0.7); }
+  .fbtn-marketing  { background: #00ccdd !important; border-color: rgba(0,180,216,0.4); color: rgba(255,255,255,0.7); }
   .fbtn-marketing.active  { box-shadow: 0 0 16px rgba(170,0,255,0.8) !important; }
   .pill-marketing  { background: rgba(0,180,216,0.45); border-color: rgba(0,180,216,0.6); }
 
   .fbtn-biltinintern  {
-    background: transparent !important;
+    background: #08043a !important;
     border: none !important;
-    padding: 0 !important;
+    padding: 4px !important;
+    border-radius: 10px !important;
   }
   .fbtn-biltinintern .partner-logo-inline img {
     background: #08043a !important;
@@ -405,10 +406,13 @@
   .filter-container-title::before {
     content: '';
     display: inline-block;
-    width: 4px;
+    width: 20px;
     height: 18px;
-    background: #149d48;
-    border-radius: 2px;
+    margin-right: 4px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='4' y1='6' x2='20' y2='6'/%3E%3Cline x1='8' y1='12' x2='16' y2='12'/%3E%3Cline x1='11' y1='18' x2='13' y2='18'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
   }
 
   .filter-container-title {
@@ -563,14 +567,7 @@
     transition: all 0.2s ease;
   }
 
-  .filter-btn[data-group="thema"]::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+
 
   .filter-btn[data-group="thema"]:hover {
     background: #fff;
@@ -578,16 +575,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
-  .fbtn-klimaatadaptief::before  { background: #2EC4B6; }
-  .fbtn-klimaatcascade::before   { background: #4CC9F0; }
-  .fbtn-biobased::before         { background: #06D6A0; }
-  .fbtn-circulair::before        { background: #8AC926; }
-  .fbtn-duurzame::before         { background: #FFD166; }
-  .fbtn-slim::before             { background: #9B7FFD; }
-  .fbtn-lectoraat::before        { background: #F72585; }
-  .fbtn-energie::before          { background: #FF9F1C; }
-  .fbtn-netcongestie::before     { background: #FF6B6B; }
-  .fbtn-marketing::before        { background: #00B4D8; }
+
 
   /* Reset fbtn background/border - use tile style instead */
 
@@ -725,7 +713,7 @@
     opacity: 0.9;
   }
 
-  .filter-btn[data-group="thema"]::before { display: none !important; }
+
 
   .filter-btn[data-group="thema"]:hover {
     opacity: 0.9;
@@ -738,16 +726,16 @@
     transform: translateY(-2px);
   }
 
-  .fbtn-klimaatadaptief  { background: linear-gradient(135deg, #00cc44 0%, #0077ff 100%) !important; }
-  .fbtn-klimaatcascade  { background: linear-gradient(135deg, #0077ff 0%, #9900ff 100%) !important; }
-  .fbtn-biobased  { background: linear-gradient(135deg, #9900ff 0%, #ff0099 100%) !important; }
-  .fbtn-circulair  { background: linear-gradient(135deg, #ff0099 0%, #ff0000 100%) !important; }
-  .fbtn-duurzame  { background: linear-gradient(135deg, #ff0000 0%, #ff6600 100%) !important; }
-  .fbtn-slim  { background: linear-gradient(135deg, #ff6600 0%, #ffdd00 100%) !important; color: #fff !important; }
-  .fbtn-lectoraat  { background: linear-gradient(135deg, #ffdd00 0%, #00cc44 100%) !important; color: #fff !important; }
-  .fbtn-energie  { background: linear-gradient(135deg, #00bb55 0%, #00ccff 100%) !important; }
-  .fbtn-netcongestie  { background: linear-gradient(135deg, #66ddff 0%, #0077cc 100%) !important; }
-  .fbtn-marketing  { background: linear-gradient(135deg, #0055ff 0%, #aa00ff 100%) !important; }
+  .fbtn-klimaatadaptief  { background: #ff66aa !important; }
+  .fbtn-klimaatcascade  { background: #00aaff !important; }
+  .fbtn-biobased  { background: #7700ff !important; }
+  .fbtn-circulair  { background: #cc88ff !important; }
+  .fbtn-duurzame  { background: #22cc66 !important; }
+  .fbtn-slim  { background: #ff4400 !important; color: #fff !important; }
+  .fbtn-lectoraat  { background: #ff9900 !important; color: #fff !important; }
+  .fbtn-energie  { background: #88ff00 !important; }
+  .fbtn-netcongestie  { background: #ff0044 !important; }
+  .fbtn-marketing  { background: #00ccdd !important; }
 
   .fbtn-klimaatadaptief.active  { box-shadow: 0 0 16px rgba(0,119,255,0.8) !important; }
   .fbtn-klimaatcascade.active  { box-shadow: 0 0 16px rgba(153,0,255,0.8) !important; }
@@ -761,20 +749,7 @@
   .fbtn-marketing.active  { box-shadow: 0 0 16px rgba(170,0,255,0.8) !important; }
 
   /* Lichte overlay op thema knoppen, verdwijnt bij hover */
-  .filter-btn[data-group="thema"]::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.35);
-    border-radius: 12px;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-  }
 
-  .filter-btn[data-group="thema"]:hover::after,
-  .filter-btn[data-group="thema"].active::after {
-    opacity: 0;
-  }
 
   .filter-btn[data-group="thema"] {
     position: relative;
@@ -802,8 +777,8 @@
   .fbtn-deltawonen .partner-logo-inline,
   .fbtn-hanzestrohm .partner-logo-inline,
   .fbtn-windesheim .partner-logo-inline {
-    width: 110px !important;
-    height: 56px !important;
+    width: 140px !important;
+    height: 60px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -819,11 +794,11 @@
   .fbtn-deltawonen .partner-logo-inline img,
   .fbtn-hanzestrohm .partner-logo-inline img,
   .fbtn-windesheim .partner-logo-inline img {
-    width: 90px !important;
-    height: 40px !important;
+    width: 125px !important;
+    height: 50px !important;
     object-fit: contain !important;
     background: transparent !important;
-    padding: 0 !important;
+    padding: 0 4px !important;
     border-radius: 0 !important;
   }
 
@@ -831,16 +806,7 @@
     position: relative;
   }
 
-  .filter-btn[data-group="thema"]::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.3);
-    border-radius: 12px;
-    transition: opacity 0.25s ease;
-    pointer-events: none;
-    z-index: 0;
-  }
+
 
   .filter-btn[data-group="thema"]:hover::before,
   .filter-btn[data-group="thema"].active::before {
@@ -854,15 +820,109 @@
   }
   .fbtn-biltinintern .partner-logo-inline {
     background: #08043a !important;
+    width: 130px !important;
+    height: 60px !important;
   }
   .fbtn-biltinintern .partner-logo-inline img {
     background: transparent !important;
+    width: 110px !important;
+    height: 50px !important;
+    object-fit: contain !important;
+  }
+
+  /* Duidelijk geselecteerd: witte rand + schaduw + vinkje */
+  .filter-btn[data-group="thema"].active {
+    outline: 1.5px solid rgba(255,255,255,0.8) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 16px rgba(255,255,255,0.4) !important;
+  }
+
+  .filter-btn[data-group="thema"].active::after {
+    content: '✓';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #fff;
+    color: #08043a;
+    font-size: 10px;
+    font-weight: 800;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  /* BILTIN INTERN - donkerblauw override */
+  button.fbtn-biltinintern,
+  button.filter-btn.fbtn-biltinintern {
+    background: #08043a !important;
+    border-radius: 10px !important;
+    padding: 4px !important;
+  }
+  button.fbtn-biltinintern .partner-logo-inline,
+  button.filter-btn.fbtn-biltinintern .partner-logo-inline {
+    background: #08043a !important;
+    min-width: 110px !important;
+    min-height: 50px !important;
+  }
+
+  /* Witte overlay op thema knoppen */
+  .filter-btn[data-group="thema"] { position: relative; overflow: hidden; }
+
+  .filter-btn[data-group="thema"]::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.28);
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    border-radius: inherit;
+  }
+
+  .filter-btn[data-group="thema"]:hover::after,
+  .filter-btn[data-group="thema"].active::after { opacity: 0; }
+
+  /* SIDEBAR LAYOUT */
+  .page-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .sidebar {
+    width: 340px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+
+  .page-layout {
+    align-items: flex-start;
+  }
+
+  .main-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .filter-container {
+    margin-bottom: 0;
+  }
+
+  .filter-section {
+    margin-bottom: 0;
   }
 </style>
 </head>
 <body>
 
-<div class="filter-container">
+<div class="page-layout"><div class="sidebar"><div class="filter-container">
 <div class="filter-container-title">Filters <span class="filter-toggle-text">Verberg filters</span><span class="filter-arrow">▲</span></div>
 <div class="filter-collapsible" id="filter-collapsible">
 <div class="filter-section">
@@ -875,7 +935,6 @@
       <button class="filter-btn fbtn-circulair" data-filter="Circulair" data-group="thema">Circulair</button>
       <button class="filter-btn fbtn-duurzame" data-filter="Duurzame materialen" data-group="thema">Duurzame materialen</button>
       <button class="filter-btn fbtn-slim" data-filter="Slim digitaal en datagedreven" data-group="thema">Slim digitaal en datagedreven</button>
-      <button class="filter-btn fbtn-lectoraat" data-filter="Lectoraat energietransitie" data-group="thema">Lectoraat energietransitie</button>
       <button class="filter-btn fbtn-energie" data-filter="Minder energieverbruik" data-group="thema">Minder energieverbruik</button>
       <button class="filter-btn fbtn-netcongestie" data-filter="Netcongestie" data-group="thema">Netcongestie</button>
       <button class="filter-btn fbtn-marketing" data-filter="Marketing en strategie" data-group="thema">Marketing en strategie</button>
@@ -913,7 +972,8 @@
   </div>
 </div>
 </div>
-
+</div>
+<div class="main-content">
 <div class="results-bar">
   <div class="results-count"><span id="count">20</span> projecten</div>
 </div>
@@ -1232,6 +1292,7 @@
     activeFilters.thema = null;
     activeFilters.status = null;
     activeFilters.jaar = null;
+    activeFilters.partner = null;
     document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active', 'active-teal', 'active-coral'));
     applyFilters();
   });
@@ -1267,5 +1328,6 @@
     filterToggleText.textContent = filterCollapsible.classList.contains('collapsed') ? 'Toon filters' : 'Verberg filters';
   });
 </script>
+</div>
 </body>
 </html>
