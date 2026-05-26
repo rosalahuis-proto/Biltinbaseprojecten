@@ -21,7 +21,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background: linear-gradient(135deg, #1d7a72 0%, #0f4a44 100%);
+    background: linear-gradient(135deg, #7ab8e8 0%, #2a6aaa 100%);
     position: relative;
     color: var(--text);
     font-family: 'Work Sans', sans-serif;
@@ -845,7 +845,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
 .filter-container {
     margin-bottom: 0;
-    background: rgba(8, 20, 80, 0.6);
+    background: rgba(8, 20, 80, 0.82);
     border-radius: 16px;
     padding: 16px;
     backdrop-filter: blur(8px);
@@ -906,6 +906,19 @@ button.fbtn-biltinintern .partner-logo-inline,
     background: rgba(0,150,255,0.15);
     border-radius: 10px;
     pointer-events: none;
+  }
+
+  /* Breman - originele stijl terug */
+  .fbtn-breman .partner-logo-inline img {
+    object-fit: contain !important;
+    transform: scale(1) !important;
+    padding: 6px 10px !important;
+  }
+
+  /* deltaWonen - minder ingezoomd */
+  .fbtn-deltawonen .partner-logo-inline img {
+    transform: scale(1.1) !important;
+    object-fit: contain !important;
   }
 </style>
 </head>
