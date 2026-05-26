@@ -797,7 +797,7 @@ body > * {
 button.fbtn-biltinintern .partner-logo-inline,
   button.filter-btn.fbtn-biltinintern .partner-logo-inline {
     background: #08043a !important;
-    width: 100px !important;
+    width: 100% !important;
     height: 52px !important;
   }
 
@@ -948,6 +948,20 @@ button.fbtn-biltinintern .partner-logo-inline,
     font-family: sans-serif;
     line-height: 1;
     pointer-events: none;
+  }
+
+  .filter-group-partner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .filter-group-partner .filter-btn[data-group="partner"] {
+    width: 100%;
+  }
+
+  .filter-group-partner .filter-btn[data-group="partner"] .partner-logo-inline {
+    width: 100% !important;
   }
 </style>
 </head>
