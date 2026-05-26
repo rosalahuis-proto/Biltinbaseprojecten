@@ -713,7 +713,7 @@ body > * {
   .fbtn-deltawonen .partner-logo-inline,
   .fbtn-hanzestrohm .partner-logo-inline,
   .fbtn-windesheim .partner-logo-inline {
-    width: 200px !important;
+    width: 110px !important;
     height: 52px !important;
     display: inline-flex !important;
     align-items: center !important;
@@ -757,7 +757,7 @@ body > * {
 
 .fbtn-biltinintern .partner-logo-inline {
     background: #08043a !important;
-    width: 130px !important;
+    width: 110px !important;
     height: 60px !important;
   }
 
@@ -951,8 +951,8 @@ button.fbtn-biltinintern .partner-logo-inline,
   }
 
   .filter-group-partner {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 6px;
   }
 
@@ -960,8 +960,18 @@ button.fbtn-biltinintern .partner-logo-inline,
     width: 100%;
   }
 
-  .filter-group-partner .filter-btn[data-group="partner"] .partner-logo-inline {
-    width: 100% !important;
+
+
+  .fbtn-breman .partner-logo-inline img {
+    object-fit: contain !important;
+    padding: 8px 12px !important;
+    transform: scale(0.85) !important;
+  }
+
+  .fbtn-deltawonen .partner-logo-inline img {
+    object-fit: contain !important;
+    padding: 8px 12px !important;
+    transform: scale(0.9) !important;
   }
 </style>
 </head>
@@ -988,12 +998,12 @@ button.fbtn-biltinintern .partner-logo-inline,
   <div class="filter-group">
     <span class="filter-label">Partner</span>
     <div class="filter-tags">
-      <button data-filter="Breman" data-group="partner" class="filter-btn fbtn-breman"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/breman-logo.png" alt="Breman"></span></button>
-      <button data-filter="Van der Sluis" data-group="partner" class="filter-btn fbtn-vandersluis"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/vandersluis-logo.png" alt="Van der Sluis"></span></button>
-      <button data-filter="Heutink" data-group="partner" class="filter-btn fbtn-heutink"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/heutink-logo.png" alt="Heutink"></span></button>
-      <button data-filter="Deltawonen" data-group="partner" class="filter-btn fbtn-deltawonen"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/deltawonen-logo.png" alt="Deltawonen"></span></button>
-      <button data-filter="Hanzestrohm" data-group="partner" class="filter-btn fbtn-hanzestrohm"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/hanzestrohm-logo.png" alt="Hanzestrohm"></span></button>
-      <button data-filter="Windesheim" data-group="partner" class="filter-btn fbtn-windesheim"><span class="partner-logo-inline" style="display:inline-flex; max-width:80px; opacity:1; margin-right:6px;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/windesheim-logo.png" alt="Windesheim"></span></button>
+      <button data-filter="Breman" data-group="partner" class="filter-btn fbtn-breman"><span class="partner-logo-inline" style="display:inline-flex; max-width:110px; opacity:1;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/breman-logo.png" alt="Breman"></span></button>
+      <button data-filter="Van der Sluis" data-group="partner" class="filter-btn fbtn-vandersluis"><span class="partner-logo-inline" style="display:inline-flex; max-width:110px; opacity:1;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/vandersluis-logo.png" alt="Van der Sluis"></span></button>
+      <button data-filter="Heutink" data-group="partner" class="filter-btn fbtn-heutink"><span class="partner-logo-inline" style="display:inline-flex; max-width:110px; opacity:1;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/heutink-logo.png" alt="Heutink"></span></button>
+      <button data-filter="Deltawonen" data-group="partner" class="filter-btn fbtn-deltawonen"><span class="partner-logo-inline" style="display:inline-flex; max-width:110px; opacity:1;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/deltawonen-logo.png" alt="Deltawonen"></span></button>
+      <button data-filter="Hanzestrohm" data-group="partner" class="filter-btn fbtn-hanzestrohm"><span class="partner-logo-inline" style="display:inline-flex; max-width:110px; opacity:1;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/hanzestrohm-logo.png" alt="Hanzestrohm"></span></button>
+      <button data-filter="Windesheim" data-group="partner" class="filter-btn fbtn-windesheim"><span class="partner-logo-inline" style="display:inline-flex; max-width:110px; opacity:1;"><img src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/windesheim-logo.png" alt="Windesheim"></span></button>
       <button class="filter-btn fbtn-biltinintern" data-filter="Biltin" data-group="partner"><span class="partner-logo-inline" style="display:inline-flex; max-width:120px; opacity:1; margin-right:0; background:#08043a; border-radius:10px; border:none; align-items:center; justify-content:center; min-width:90px; height:44px;"><img onerror="this.style.display='none'" src="https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/biltin-logo.jpg" alt="Biltin intern" style="max-height:32px; width:auto; padding:4px 8px; background:transparent; border:none;"></span></button>
     </div>
   </div>
