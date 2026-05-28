@@ -594,25 +594,13 @@ body > * {
     transform: scale(1.15);
   }
 
-.fbtn-breman .partner-logo-inline img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    padding: 12px !important;
-    transform: none !important;
-  }
+
 
 .fbtn-vandersluis .partner-logo-inline img  { border-color: #E9A010; }
 
 .fbtn-heutink .partner-logo-inline img      { border-color: #E63946; }
 
-.fbtn-deltawonen .partner-logo-inline img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    padding: 18px !important;
-    transform: none !important;
-  }
+
 
 .fbtn-hanzestrohm .partner-logo-inline img  { border-color: #B5179E; }
 
@@ -699,10 +687,8 @@ body > * {
   }
 
 .filter-btn[data-group="partner"] .partner-logo-inline img,
-  .fbtn-breman .partner-logo-inline img,
   .fbtn-vandersluis .partner-logo-inline img,
   .fbtn-heutink .partner-logo-inline img,
-  .fbtn-deltawonen .partner-logo-inline img,
   .fbtn-hanzestrohm .partner-logo-inline img,
   .fbtn-windesheim .partner-logo-inline img {
     width: 160px !important;
@@ -891,20 +877,10 @@ button.fbtn-biltinintern .partner-logo-inline,
     pointer-events: none;
   }
 
-/* Breman - originele stijl */
-  .fbtn-breman .partner-logo-inline img {
-    object-fit: contain !important;
-    transform: scale(1) !important;
-    padding: 4px 8px !important;
-    width: 125px !important;
-    height: 50px !important;
-  }
+
 
 /* deltaWonen - minder ingezoomd */
-  .fbtn-deltawonen .partner-logo-inline img {
-    transform: scale(1.1) !important;
-    object-fit: contain !important;
-  }
+  
 
 .card-placeholder-bg {
     position: relative;
@@ -950,6 +926,28 @@ button.fbtn-biltinintern .partner-logo-inline,
   .pill-energie         { background: rgba(0,180,255,0.25); color: #66ccff; border: 1px solid rgba(0,180,255,0.5); }
   .pill-overig          { background: rgba(100,150,200,0.25); color: #aaccee; border: 1px solid rgba(100,150,200,0.5); }
 
+
+  /* deltaWonen - klein zodat alle tekst leesbaar */
+  .fbtn-deltawonen .partner-logo-inline img {
+    width: 50% !important;
+    height: 50% !important;
+    object-fit: contain !important;
+    padding: 0 !important;
+    transform: none !important;
+    display: block !important;
+    margin: auto !important;
+  }
+
+  /* Breman - iets uitgezoomed */
+  .fbtn-breman .partner-logo-inline img {
+    width: 80% !important;
+    height: 80% !important;
+    object-fit: contain !important;
+    padding: 0 !important;
+    transform: none !important;
+    display: block !important;
+    margin: auto !important;
+  }
 </style>
 </head>
 <body>
