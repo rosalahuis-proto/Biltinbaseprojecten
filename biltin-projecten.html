@@ -6,6 +6,7 @@
 <title>Biltin Projecten</title>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+
 :root {
     --navy: #0B1638;
     --purple: #7C5CFC;
@@ -76,39 +77,19 @@ body {
   /* Thema knoppen — inactief subtiel, actief oplichtend */
   .fbtn-klimaatadaptief  { background: #ff66aa !important;  border-color: rgba(46,196,182,0.4);  color: rgba(255,255,255,0.7); }
 
-.fbtn-klimaatcascade  { background: #00aaff !important; }
-
-.fbtn-biobased  { background: #7700ff !important; }
-
 .fbtn-circulair  { background: #cc88ff !important; }
-
-.fbtn-duurzame  { background: #22cc66 !important; }
 
 .fbtn-slim  { background: #ff4400 !important; color: #fff !important; }
 
-.fbtn-lectoraat  { background: #ff9900 !important; color: #fff !important; }
-
 .fbtn-energie  { background: #88ff00 !important; }
-
-.fbtn-netcongestie  { background: #ff0044 !important; }
 
 .fbtn-klimaatadaptief.active  { box-shadow: 0 0 16px rgba(0,119,255,0.8) !important; }
 
-.fbtn-klimaatcascade.active  { box-shadow: 0 0 16px rgba(153,0,255,0.8) !important; }
-
-.fbtn-biobased.active  { box-shadow: 0 0 16px rgba(255,0,153,0.8) !important; }
-
 .fbtn-circulair.active  { box-shadow: 0 0 16px rgba(255,0,0,0.8) !important; }
-
-.fbtn-duurzame.active  { box-shadow: 0 0 16px rgba(255,102,0,0.8) !important; }
 
 .fbtn-slim.active  { box-shadow: 0 0 16px rgba(255,221,0,0.8) !important; }
 
-.fbtn-lectoraat.active  { box-shadow: 0 0 16px rgba(0,204,68,0.8) !important; }
-
 .fbtn-energie.active  { box-shadow: 0 0 16px rgba(0,204,255,0.8) !important; }
-
-.fbtn-netcongestie.active  { box-shadow: 0 0 16px rgba(0,51,153,0.8) !important; }
 
 .filter-reset-row {
     margin-top: 16px;
@@ -410,10 +391,6 @@ body {
 
 .fbtn-windesheim.active   { background: rgba(114,9,183,0.55);   border-color: #7209B7; color: #fff; }
 
-.fbtn-marketing  { background: #00ccdd !important; }
-
-.fbtn-marketing.active  { box-shadow: 0 0 16px rgba(170,0,255,0.8) !important; }
-
 .pill-marketing  { background: rgba(0,180,216,0.45); border-color: rgba(0,180,216,0.6); }
 
 .fbtn-biltinintern  { border-width: 2px; }
@@ -588,29 +565,16 @@ body > * {
 
 /* Reset fbtn background/border - use tile style instead */
 
-
   /* Active state - white tile with colored border and dot glow */
   .fbtn-klimaatadaptief.active  { box-shadow: 0 0 16px rgba(0,119,255,0.8) !important; }
 
 .fbtn-klimaatadaptief.active::before  { box-shadow: 0 0 6px #2EC4B6; }
 
-.fbtn-klimaatcascade.active::before   { box-shadow: 0 0 6px #4CC9F0; }
-
-.fbtn-biobased.active::before         { box-shadow: 0 0 6px #06D6A0; }
-
 .fbtn-circulair.active::before        { box-shadow: 0 0 6px #8AC926; }
-
-.fbtn-duurzame.active::before         { box-shadow: 0 0 6px #FFD166; }
 
 .fbtn-slim.active::before             { box-shadow: 0 0 6px #9B7FFD; }
 
-.fbtn-lectoraat.active::before        { box-shadow: 0 0 6px #F72585; }
-
 .fbtn-energie.active::before          { box-shadow: 0 0 6px #FF9F1C; }
-
-.fbtn-netcongestie.active::before     { box-shadow: 0 0 6px #FF6B6B; }
-
-.fbtn-marketing.active::before        { box-shadow: 0 0 6px #00B4D8; }
 
 .fbtn-klimaatadaptief  { background: #ff66aa !important; }
 
@@ -630,13 +594,25 @@ body > * {
     transform: scale(1.15);
   }
 
-.fbtn-breman .partner-logo-inline img       { border-color: #4361EE; }
+.fbtn-breman .partner-logo-inline img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    padding: 12px !important;
+    transform: none !important;
+  }
 
 .fbtn-vandersluis .partner-logo-inline img  { border-color: #E9A010; }
 
 .fbtn-heutink .partner-logo-inline img      { border-color: #E63946; }
 
-.fbtn-deltawonen .partner-logo-inline img   { border-color: #4A6FA5; }
+.fbtn-deltawonen .partner-logo-inline img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    padding: 18px !important;
+    transform: none !important;
+  }
 
 .fbtn-hanzestrohm .partner-logo-inline img  { border-color: #B5179E; }
 
@@ -687,7 +663,6 @@ body > * {
   }
 
 /* Lichte overlay op thema knoppen, verdwijnt bij hover */
-
 
   .filter-btn[data-group="thema"] {
     position: relative;
@@ -895,19 +870,19 @@ button.fbtn-biltinintern .partner-logo-inline,
 
 .filter-toggle-floating.zichtbaar { display: block; }
 
-  /* Partner geselecteerd: groter + licht blauwe overlay */
+/* Partner geselecteerd: groter + licht blauwe overlay */
   .filter-btn[data-group="partner"].active {
     transform: scale(1.12) !important;
     z-index: 2;
     position: relative;
   }
 
-  .filter-btn[data-group="partner"].active .partner-logo-inline {
+.filter-btn[data-group="partner"].active .partner-logo-inline {
     box-shadow: 0 0 0 3px rgba(0,150,255,0.7), 0 4px 16px rgba(0,100,255,0.3) !important;
     position: relative;
   }
 
-  .filter-btn[data-group="partner"].active .partner-logo-inline::after {
+.filter-btn[data-group="partner"].active .partner-logo-inline::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -916,7 +891,7 @@ button.fbtn-biltinintern .partner-logo-inline,
     pointer-events: none;
   }
 
-  /* Breman - originele stijl */
+/* Breman - originele stijl */
   .fbtn-breman .partner-logo-inline img {
     object-fit: contain !important;
     transform: scale(1) !important;
@@ -925,18 +900,18 @@ button.fbtn-biltinintern .partner-logo-inline,
     height: 50px !important;
   }
 
-  /* deltaWonen - minder ingezoomd */
+/* deltaWonen - minder ingezoomd */
   .fbtn-deltawonen .partner-logo-inline img {
     transform: scale(1.1) !important;
     object-fit: contain !important;
   }
 
-  .card-placeholder-bg {
+.card-placeholder-bg {
     position: relative;
     overflow: hidden;
   }
 
-  .card-placeholder-bg::after {
+.card-placeholder-bg::after {
     content: 'b';
     position: absolute;
     bottom: -10px;
@@ -949,42 +924,32 @@ button.fbtn-biltinintern .partner-logo-inline,
     pointer-events: none;
   }
 
-  .filter-group-partner {
+.filter-group-partner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 6px;
   }
 
-  .filter-group-partner .filter-btn {
+.filter-group-partner .filter-btn {
     width: 100%;
     padding: 0 !important;
   }
 
-  .filter-group-partner .filter-btn .partner-logo-inline {
+.filter-group-partner .filter-btn .partner-logo-inline {
     width: 100% !important;
     min-width: unset !important;
   }
 
+.fbtn-overig { background: linear-gradient(135deg, #66bbff 0%, #3388cc 100%) !important; }
 
+.fbtn-overig.active { box-shadow: 0 0 14px rgba(100,100,100,0.7) !important; }
 
-  .fbtn-breman .partner-logo-inline img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    padding: 12px !important;
-    transform: none !important;
-  }
+  .pill-klimaatadaptief { background: rgba(20,157,72,0.25); color: #00ff88; border: 1px solid rgba(20,157,72,0.5); }
+  .pill-slim            { background: rgba(255,102,0,0.25); color: #ffaa66; border: 1px solid rgba(255,102,0,0.5); }
+  .pill-circulair       { background: rgba(170,0,255,0.25); color: #cc88ff; border: 1px solid rgba(170,0,255,0.5); }
+  .pill-energie         { background: rgba(0,180,255,0.25); color: #66ccff; border: 1px solid rgba(0,180,255,0.5); }
+  .pill-overig          { background: rgba(100,150,200,0.25); color: #aaccee; border: 1px solid rgba(100,150,200,0.5); }
 
-  .fbtn-deltawonen .partner-logo-inline img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    padding: 18px !important;
-    transform: none !important;
-  }
-
-  .fbtn-overig { background: linear-gradient(135deg, #66bbff 0%, #3388cc 100%) !important; }
-  .fbtn-overig.active { box-shadow: 0 0 14px rgba(100,100,100,0.7) !important; }
 </style>
 </head>
 <body>
@@ -997,7 +962,7 @@ button.fbtn-biltinintern .partner-logo-inline,
     <span class="filter-label">Thema</span>
     <div class="filter-tags">
       <button class="filter-btn fbtn-energie" data-filter="Energie" data-group="thema">Energie</button>
-      <button class="filter-btn fbtn-slim" data-filter="Slim en digitaal" data-group="thema">Slim &amp; digitaal</button>
+      <button class="filter-btn fbtn-slim" data-filter="Slim en digitaal" data-group="thema">Slim en digitaal</button>
       <button class="filter-btn fbtn-circulair" data-filter="Circulair en biobased" data-group="thema">Circulair en biobased</button>
       <button class="filter-btn fbtn-klimaatadaptief" data-filter="Klimaat adaptief" data-group="thema">Klimaat adaptief</button>
       <button class="filter-btn fbtn-overig" data-filter="Overig" data-group="thema">Overig</button>
@@ -1060,7 +1025,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Circulair en biobased" data-status="Lopend" data-jaar="2025" data-partner="Van der Sluis">
     <div class="card-bg img-2"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-biobased">Circulair en biobased</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-circulair">Circulair en biobased</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Van der Sluis</div>
       <div class="card-title">Project titel</div>
@@ -1074,7 +1039,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Overig" data-status="Afgerond" data-jaar="2025" data-partner="Biltin">
     <div class="card-bg" style="background-image: url('https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/foto-sven.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-marketing">Overig</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-overig">Overig</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Biltin</div>
       <div class="card-title">Aanloop studenten Biltin</div>
@@ -1102,7 +1067,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Energie" data-status="Lopend" data-jaar="2026" data-partner="Deltawonen">
     <div class="card-bg img-5"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-netcongestie">Energie</span><span class="year-pill">2026</span></div>
+    <div class="card-top"><span class="theme-pill pill-energie">Energie</span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Deltawonen</div>
       <div class="card-title">Project titel</div>
@@ -1116,7 +1081,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Overig" data-status="Afgerond" data-jaar="2025" data-partner="Breman">
     <div class="card-bg img-6"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-duurzame">Overig</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-overig">Overig</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Breman</div>
       <div class="card-title">Project titel</div>
@@ -1144,7 +1109,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Klimaat adaptief" data-status="Lopend" data-jaar="2026" data-partner="Windesheim">
     <div class="card-bg" style="background-image: url('https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/Foto-jan.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-klimaatcascade">Klimaat adaptief</span><span class="theme-pill pill-lectoraat" style="margin-left:4px; font-size:10px;">Energie</span><span class="year-pill">2026</span></div>
+    <div class="card-top"><span class="theme-pill pill-klimaatadaptief">Klimaat adaptief</span><span class="theme-pill pill-energie" style="margin-left:4px; font-size:10px;">Energie</span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Windesheim</div>
       <div class="card-title">Klimaatcascade doorontwikkeling</div>
@@ -1158,7 +1123,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Energie" data-status="Lopend" data-jaar="2025" data-partner="Van der Sluis">
     <div class="card-bg img-9"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-lectoraat">Energie</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-energie">Energie</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Van der Sluis</div>
       <div class="card-title">Project titel</div>
@@ -1172,7 +1137,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Circulair en biobased" data-status="Afgerond" data-jaar="2025" data-partner="Heutink">
     <div class="card-bg img-10"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-biobased">Circulair en biobased</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-circulair">Circulair en biobased</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Heutink</div>
       <div class="card-title">Project titel</div>
@@ -1228,7 +1193,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Energie" data-status="Afgerond" data-jaar="2025" data-partner="Breman">
     <div class="card-bg img-4"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-netcongestie">Energie</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-energie">Energie</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Breman</div>
       <div class="card-title">Project titel</div>
@@ -1242,7 +1207,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Overig" data-status="Lopend" data-jaar="2026" data-partner="Van der Sluis">
     <div class="card-bg img-5"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-duurzame">Overig</span><span class="year-pill">2026</span></div>
+    <div class="card-top"><span class="theme-pill pill-overig">Overig</span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Van der Sluis</div>
       <div class="card-title">Project titel</div>
@@ -1256,7 +1221,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Energie" data-status="Afgerond" data-jaar="2025" data-partner="Windesheim">
     <div class="card-bg img-6"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-lectoraat">Energie</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-energie">Energie</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Windesheim</div>
       <div class="card-title">Project titel</div>
@@ -1284,7 +1249,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 
   <div class="project-card" data-thema="Klimaat adaptief" data-status="Afgerond" data-jaar="2025" data-partner="Windesheim">
     <div class="card-bg" style="background-image: url('https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/Foto-jan-opbouw.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-klimaatcascade">Klimaat adaptief</span><span class="theme-pill pill-lectoraat" style="margin-left:4px; font-size:10px;">Energie</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-klimaatadaptief">Klimaat adaptief</span><span class="theme-pill pill-energie" style="margin-left:4px; font-size:10px;">Energie</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Windesheim</div>
       <div class="card-title">Klimaatcascade bouwen</div>
