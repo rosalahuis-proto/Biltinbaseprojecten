@@ -301,33 +301,11 @@ body {
      Gebruik: background-image: url('JOUW_FOTO_URL');       */
   /* THEMA PILL KLEUREN */
 
-.pill-klimaatcascade    { background: rgba(76,201,240,0.45);   border-color: rgba(76,201,240,0.6); }
-
-.pill-biobased          { background: rgba(6,214,160,0.45);    border-color: rgba(6,214,160,0.6); }
-
-.pill-duurzame          { background: rgba(255,209,102,0.45);  border-color: rgba(255,209,102,0.6); }
-
-.pill-lectoraat         { background: rgba(247,37,133,0.45);   border-color: rgba(247,37,133,0.6); }
-
-.pill-netcongestie      { background: rgba(255,107,107,0.45);  border-color: rgba(255,107,107,0.6); }
-
-.img-1, .img-2, .img-4, .img-5, .img-7, .img-8, .img-9, .img-10 { background: linear-gradient(135deg, rgba(36,53,112,0.7) 0%, rgba(46,68,144,0.7) 100%); }
-
-.img-3 { background: linear-gradient(135deg, rgba(36,53,112,0.7) 0%, rgba(46,68,144,0.7) 100%); }
-
-.img-6 { background: linear-gradient(135deg, rgba(36,53,112,0.7) 0%, rgba(46,68,144,0.7) 100%); }
-
 /* PARTNER LOGO IN PIL */
   .filter-btn[data-group="partner"] {
     position: relative;
     transition: padding 0.3s ease;
     overflow: hidden;
-  }
-
-.filter-btn[data-group="partner"] .partner-text {
-    display: inline-block;
-    transition: opacity 0.2s ease, max-width 0.3s ease;
-    vertical-align: middle;
   }
 
 .filter-btn[data-group="partner"] .partner-logo-inline {
@@ -337,26 +315,12 @@ body {
     display: inline-flex;
   }
 
-.filter-btn[data-group="partner"].logo-hover .partner-text {
-    display: none;
-  }
-
 .filter-btn[data-group="partner"].logo-hover .partner-logo-inline {
     display: inline-flex;
   }
 
 .filter-btn[data-group="partner"].logo-hover {
     padding: 8px 16px;
-  }
-
-.partner-logo-inline img {
-    height: 48px;
-    width: auto;
-    display: block;
-    background: transparent;
-    padding: 0;
-    mix-blend-mode: screen;
-    border-radius: 8px;
   }
 
 /* PARTNER FILTERKNOPJES — eigen kleuren los van thema's */
@@ -383,8 +347,6 @@ body {
 .fbtn-hanzestrohm.active  { background: rgba(181,23,158,0.55);  border-color: #B5179E; color: #fff; }
 
 .fbtn-windesheim.active   { background: rgba(114,9,183,0.55);   border-color: #7209B7; color: #fff; }
-
-.pill-marketing  { background: rgba(0,180,216,0.45); border-color: rgba(0,180,216,0.6); }
 
 .fbtn-biltinintern  { border-width: 2px; }
 
@@ -563,17 +525,13 @@ body > * {
 /* Reset fbtn background/border - use tile style instead */
 
   /* Active state - white tile with colored border and dot glow */
-  .fbtn-klimaatadaptief.active  { box-shadow: 0 0 16px rgba(0,119,255,0.8) !important; }
-
-.fbtn-klimaatadaptief.active::before  { box-shadow: 0 0 6px #2EC4B6; }
+  .fbtn-klimaatadaptief.active::before  { box-shadow: 0 0 6px #2EC4B6; }
 
 .fbtn-circulair.active::before        { box-shadow: 0 0 6px #8AC926; }
 
 .fbtn-slim.active::before             { box-shadow: 0 0 6px #9B7FFD; }
 
 .fbtn-energie.active::before          { box-shadow: 0 0 6px #FF9F1C; }
-
-.fbtn-klimaatadaptief  { background: #ff66aa !important; }
 
 /* PARTNER KNOPPEN — alleen logo met gekleurde rand */
   .filter-btn[data-group="partner"] {
@@ -891,24 +849,6 @@ button.fbtn-biltinintern .partner-logo-inline,
 
 /* deltaWonen - minder ingezoomd */
   
-
-.card-placeholder-bg {
-    position: relative;
-    overflow: hidden;
-  }
-
-.card-placeholder-bg::after {
-    content: 'b';
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    font-size: 120px;
-    font-weight: 900;
-    color: rgba(255,255,255,0.04);
-    font-family: sans-serif;
-    line-height: 1;
-    pointer-events: none;
-  }
 
 .filter-group-partner {
     display: grid;
