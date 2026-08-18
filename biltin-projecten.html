@@ -34,7 +34,7 @@ body {
     margin-bottom: 0;
   }
 
-.filter-group { margin-bottom: 12px; }
+.filter-group { margin-bottom: 22px; }
 
 .filter-label {
     font-family: 'Work Sans', sans-serif;
@@ -397,7 +397,7 @@ body {
   }
 
 .filter-collapsible {
-    overflow: hidden;
+    overflow: visible;
     transition: max-height 0.35s ease, opacity 0.3s ease;
     max-height: 1000px;
     opacity: 1;
@@ -406,6 +406,7 @@ body {
 .filter-collapsible.collapsed {
     max-height: 0;
     opacity: 0;
+    overflow: hidden;
   }
 
 .filter-toggle-text {
@@ -461,6 +462,7 @@ body > * {
 .filter-btn[data-group="status"]:hover {
     background: rgba(255,255,255,0.06);
     border: none;
+    transform: translateY(-2px);
   }
 
 .filter-btn[data-group="status"].active-teal {
@@ -547,6 +549,8 @@ body > * {
 .filter-btn[data-group="partner"]:hover {
     background: transparent !important;
     transform: scale(1.15);
+    z-index: 3;
+    position: relative;
   }
 
 
@@ -875,6 +879,22 @@ button.fbtn-biltinintern .partner-logo-inline,
   .pill-circulair       { background: #cc88ff; color: #08043a; border: none; }
   .pill-energie         { background: #88ff00; color: #08043a; border: none; }
   .pill-overig          { background: linear-gradient(135deg, #66bbff, #3388cc); color: #08043a; border: none; }
+  .pill-partner         { background: #1ec9b7; color: #08043a; border: none; }
+
+  .fbtn-partner { background: #1ec9b7 !important; }
+  .fbtn-partner.active { box-shadow: 0 0 14px rgba(30,201,183,0.7) !important; }
+
+  .filter-divider {
+    flex-basis: 100%;
+    height: 0;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    margin: 8px 0 4px;
+  }
+  .filter-btn.fbtn-overig, .filter-btn.fbtn-partner {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
 
   /* Biltin vak gelijk aan de andere partnervakken, wel donkere achtergrond */
   button.fbtn-biltinintern,
@@ -911,12 +931,14 @@ button.fbtn-biltinintern .partner-logo-inline,
 <div class="filter-section">
   <div class="filter-group">
     <span class="filter-label">Categorie</span>
-    <div class="filter-tags">
+    <div class="filter-tags" style="margin-bottom: 14px;">
       <button class="filter-btn fbtn-energie" data-filter="Energie" data-group="thema">Energie</button>
       <button class="filter-btn fbtn-slim" data-filter="Ontwerp" data-group="thema">Ontwerp</button>
       <button class="filter-btn fbtn-circulair" data-filter="Installatie" data-group="thema">Installatie</button>
       <button class="filter-btn fbtn-klimaatadaptief" data-filter="Schil" data-group="thema">Schil</button>
-      <button class="filter-btn fbtn-overig" data-filter="Studentenprojecten" data-group="thema">Studentenprojecten</button>
+      <div class="filter-divider"></div>
+      <button class="filter-btn fbtn-overig" data-filter="Biltin projecten" data-group="thema">Biltin projecten</button>
+      <button class="filter-btn fbtn-partner" data-filter="Partner projecten" data-group="thema">Partner projecten</button>
     </div>
   </div>
   <div class="filter-group">
@@ -962,7 +984,7 @@ button.fbtn-biltinintern .partner-logo-inline,
 <div class="projects-grid" id="projects-grid">
 
     <div class="project-card" data-thema="Ontwerp" data-status="Lopend" data-jaar="2026" data-partner="Alle">
-    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Biobased%20materialen.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
+    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Biobased%20materialen.png'); background-size: cover; background-position: center;"></div><div class="card-overlay" style="background: linear-gradient(rgba(210,40,40,0.25), rgba(210,40,40,0.25)), linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.88) 100%);"></div>
     <div class="card-top"><span class="theme-pill pill-slim">Ontwerp</span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Alle partners</div>
@@ -974,60 +996,8 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Ontwerp|Installatie" data-status="Lopend" data-jaar="2026" data-partner="Van der Sluis|Breman|Deltawonen">
-    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/WTW.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-slim">Ontwerp</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
-    <div class="card-content">
-      <div class="card-category">Van der Sluis, Breman, DeltaWonen</div>
-      <div class="card-title">Circulaire toepassing wtw-unit</div>
-      <div class="card-description">Onderzoek naar circulaire WTW-oplossingen opschalen met de keten.</div>
-      <div class="card-footer-row">
-        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Circulaire-toepassing-wtw-unit.aspx" target="_blank" rel="noopener">Bekijk project</a>
-        <div class="card-meta-row"><span class="status-dot lopend"></span><span>Lopend</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="project-card" data-thema="Studentenprojecten" data-status="Afgerond" data-jaar="2026" data-partner="Biltin">
-    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Foto-rosa.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="year-pill">2026</span></div>
-    <div class="card-content">
-      <div class="card-category">Biltin</div>
-      <div class="card-title">Biltin Base kennisbank</div>
-      <div class="card-description">Ontwerp en opzet van de Biltin Base.</div>
-      <div class="card-footer-row">
-        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/BB-Rosa-Lahuis.aspx" target="_blank" rel="noopener">Bekijk project</a>
-        <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="project-card" data-thema="Ontwerp|Installatie" data-status="Lopend" data-jaar="2026" data-partner="Alle">
-    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Overdimensionering.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-slim">Ontwerp</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
-    <div class="card-content">
-      <div class="card-category">Alle partners</div>
-      <div class="card-title">Overdimensionering installatie woningbouw</div>
-      <div class="card-description">Onderzoek naar de gevolgen van het hanteren van een andere ontwerpnorm.</div>
-      <div class="card-footer-row">
-        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Overdimensionering-van-installaties-in-woningen.aspx" target="_blank" rel="noopener">Bekijk project</a>
-        <div class="card-meta-row"><span class="status-dot lopend"></span><span>Lopend</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="project-card" data-thema="Energie|Studentenprojecten" data-status="Afgerond" data-jaar="2026" data-partner="Windesheim">
-    <div class="card-bg" style="background-image: url('https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/Powertable%20foto.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start;"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span></span><span class="year-pill">2026</span></div>
-    <div class="card-content">
-      <div class="card-category">Windesheim</div>
-      <div class="card-title">Powertable</div>
-      <div class="card-description">De powertable is een tool die het energienet simuleert.</div>
-      <div class="card-footer-row">
-        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Powertable-project.aspx" target="_blank" rel="noopener">Bekijk project</a>
-        <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
-      </div>
-    </div>
-  </div>
   <div class="project-card" data-thema="Energie" data-status="Lopend" data-jaar="2026" data-partner="Alle">
-    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Energie%20delen.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
+    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Energie%20delen.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay" style="background: linear-gradient(rgba(210,40,40,0.25), rgba(210,40,40,0.25)), linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.88) 100%);"></div>
     <div class="card-top"><span class="theme-pill pill-energie">Energie</span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Alle partners</div>
@@ -1039,21 +1009,8 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Studentenprojecten|Ontwerp" data-status="Afgerond" data-jaar="2026" data-partner="Hanzestrohm">
-    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Sokkel.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start;"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="theme-pill pill-slim" style="font-size:10px;">Ontwerp</span></span><span class="year-pill">2026</span></div>
-    <div class="card-content">
-      <div class="card-category">Hanzestrohm</div>
-      <div class="card-title">Relais-sokkel</div>
-      <div class="card-description">Ontwerp van relais-sokkel die deurdrangers aanstuurt via rookmelderstatus.</div>
-      <div class="card-footer-row">
-        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Relais-sokkel%20-%20Chanisa.aspx" target="_blank" rel="noopener">Bekijk project</a>
-        <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
-      </div>
-    </div>
-  </div>
   <div class="project-card" data-thema="Ontwerp|Schil" data-status="Lopend" data-jaar="2026" data-partner="Alle">
-    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Aanpasbaar%20bouwen.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
+    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Aanpasbaar%20bouwen.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay" style="background: linear-gradient(rgba(210,40,40,0.25), rgba(210,40,40,0.25)), linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.88) 100%);"></div>
     <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-slim">Ontwerp</span><span class="theme-pill pill-klimaatadaptief" style="font-size:10px;">Schil</span></span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Alle partners</div>
@@ -1065,9 +1022,74 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Studentenprojecten|Energie|Installatie" data-status="Afgerond" data-jaar="2026" data-partner="Hanzestrohm">
+  <div class="project-card" data-thema="Biltin projecten|Ontwerp|Installatie" data-status="Lopend" data-jaar="2026" data-partner="Van der Sluis|Breman|Deltawonen">
+    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/WTW.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-overig">Biltin projecten</span><span class="theme-pill pill-slim" style="font-size:10px;">Ontwerp</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
+    <div class="card-content">
+      <div class="card-category">Van der Sluis, Breman, DeltaWonen</div>
+      <div class="card-title">Circulaire toepassing wtw-unit</div>
+      <div class="card-description">Onderzoek naar circulaire WTW-oplossingen opschalen met de keten.</div>
+      <div class="card-footer-row">
+        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Circulaire-toepassing-wtw-unit.aspx" target="_blank" rel="noopener">Bekijk project</a>
+        <div class="card-meta-row"><span class="status-dot lopend"></span><span>Lopend</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="project-card" data-thema="Biltin projecten" data-status="Afgerond" data-jaar="2026" data-partner="Biltin">
+    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Foto-rosa.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
+    <div class="card-top"><span class="theme-pill pill-overig">Biltin projecten</span><span class="year-pill">2026</span></div>
+    <div class="card-content">
+      <div class="card-category">Biltin</div>
+      <div class="card-title">Biltin Base kennisbank</div>
+      <div class="card-description">Ontwerp en opzet van de Biltin Base.</div>
+      <div class="card-footer-row">
+        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/BB-Rosa-Lahuis.aspx" target="_blank" rel="noopener">Bekijk project</a>
+        <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="project-card" data-thema="Biltin projecten|Ontwerp|Installatie" data-status="Lopend" data-jaar="2026" data-partner="Alle">
+    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Overdimensionering.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-overig">Biltin projecten</span><span class="theme-pill pill-slim" style="font-size:10px;">Ontwerp</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
+    <div class="card-content">
+      <div class="card-category">Alle partners</div>
+      <div class="card-title">Overdimensionering installatie woningbouw</div>
+      <div class="card-description">Onderzoek naar de gevolgen van het hanteren van een andere ontwerpnorm.</div>
+      <div class="card-footer-row">
+        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Overdimensionering-van-installaties-in-woningen.aspx" target="_blank" rel="noopener">Bekijk project</a>
+        <div class="card-meta-row"><span class="status-dot lopend"></span><span>Lopend</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="project-card" data-thema="Energie|Partner projecten" data-status="Afgerond" data-jaar="2026" data-partner="Windesheim">
+    <div class="card-bg" style="background-image: url('https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/Powertable%20foto.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start;"><span class="theme-pill pill-partner">Partner projecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span></span><span class="year-pill">2026</span></div>
+    <div class="card-content">
+      <div class="card-category">Windesheim</div>
+      <div class="card-title">Powertable</div>
+      <div class="card-description">De powertable is een tool die het energienet simuleert.</div>
+      <div class="card-footer-row">
+        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Powertable-project.aspx" target="_blank" rel="noopener">Bekijk project</a>
+        <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="project-card" data-thema="Partner projecten|Ontwerp" data-status="Afgerond" data-jaar="2026" data-partner="Hanzestrohm">
+    <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Sokkel.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-partner">Partner projecten</span><span class="theme-pill pill-slim" style="font-size:10px;">Ontwerp</span></span><span class="year-pill">2026</span></div>
+    <div class="card-content">
+      <div class="card-category">Hanzestrohm</div>
+      <div class="card-title">Relais-sokkel</div>
+      <div class="card-description">Ontwerp van relais-sokkel die deurdrangers aanstuurt via rookmelderstatus.</div>
+      <div class="card-footer-row">
+        <a class="card-btn" href="https://biltin.sharepoint.com/SitePages/Relais-sokkel%20-%20Chanisa.aspx" target="_blank" rel="noopener">Bekijk project</a>
+        <div class="card-meta-row"><span class="status-dot afgerond"></span><span>Afgerond</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="project-card" data-thema="Partner projecten|Energie|Installatie" data-status="Afgerond" data-jaar="2026" data-partner="Hanzestrohm">
     <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Installatiekast_Smart_EMS.jpeg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-partner">Partner projecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Hanzestrohm</div>
       <div class="card-title">Smart EMS</div>
@@ -1078,9 +1100,9 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Studentenprojecten|Schil" data-status="Afgerond" data-jaar="2026" data-partner="Heutink">
+  <div class="project-card" data-thema="Partner projecten|Schil" data-status="Afgerond" data-jaar="2026" data-partner="Heutink">
     <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Biobased.jpeg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="theme-pill pill-klimaatadaptief" style="font-size:10px;">Schil</span></span><span class="year-pill">2026</span></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-partner">Partner projecten</span><span class="theme-pill pill-klimaatadaptief" style="font-size:10px;">Schil</span></span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Heutink</div>
       <div class="card-title">Biobased bouwmaterialen</div>
@@ -1091,9 +1113,9 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Studentenprojecten|Energie" data-status="Afgerond" data-jaar="2026" data-partner="Windesheim">
+  <div class="project-card" data-thema="Partner projecten|Energie" data-status="Afgerond" data-jaar="2026" data-partner="Windesheim">
     <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Test%20klimaatcascade.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span></span><span class="year-pill">2026</span></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-partner">Partner projecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span></span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Windesheim</div>
       <div class="card-title">Validatie rekenmodellen klimaatcascade</div>
@@ -1104,9 +1126,9 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Studentenprojecten|Energie|Installatie" data-status="Afgerond" data-jaar="2026" data-partner="Windesheim">
+  <div class="project-card" data-thema="Partner projecten|Energie|Installatie" data-status="Afgerond" data-jaar="2026" data-partner="Windesheim">
     <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/screenshot%20simulatiemodel%20Grasshopper.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-partner">Partner projecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Windesheim</div>
       <div class="card-title">Gevoeligheidsanalyse EWF-model</div>
@@ -1117,9 +1139,9 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Studentenprojecten|Energie|Installatie" data-status="Afgerond" data-jaar="2026" data-partner="Hanzestrohm">
+  <div class="project-card" data-thema="Partner projecten|Energie|Installatie" data-status="Afgerond" data-jaar="2026" data-partner="Hanzestrohm">
     <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Kai.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-partner">Partner projecten</span><span class="theme-pill pill-energie" style="font-size:10px;">Energie</span><span class="theme-pill pill-circulair" style="font-size:10px;">Installatie</span></span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Hanzestrohm</div>
       <div class="card-title">DC-Verlichting voor Kantoren</div>
@@ -1130,9 +1152,9 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Studentenprojecten|Schil" data-status="Afgerond" data-jaar="2026" data-partner="Windesheim">
+  <div class="project-card" data-thema="Partner projecten|Schil" data-status="Afgerond" data-jaar="2026" data-partner="Windesheim">
     <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Stefan.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="theme-pill pill-klimaatadaptief" style="font-size:10px;">Schil</span></span><span class="year-pill">2026</span></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-partner">Partner projecten</span><span class="theme-pill pill-klimaatadaptief" style="font-size:10px;">Schil</span></span><span class="year-pill">2026</span></div>
     <div class="card-content">
       <div class="card-category">Windesheim</div>
       <div class="card-title">Nieuwbouw natuureducatiecentrum Nooterhof</div>
@@ -1143,9 +1165,9 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Studentenprojecten|Schil" data-status="Afgerond" data-jaar="2025" data-partner="Van der Sluis">
+  <div class="project-card" data-thema="Partner projecten|Schil" data-status="Afgerond" data-jaar="2025" data-partner="Van der Sluis">
     <div class="card-bg" style="background-image: url('https://cdn.jsdelivr.net/gh/rosalahuis-proto/Biltinbaseprojecten@main/Atefeh.png'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="theme-pill pill-klimaatadaptief" style="font-size:10px;">Schil</span></span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span style="display:flex; gap:6px; align-items:flex-start; flex-wrap:wrap;"><span class="theme-pill pill-partner">Partner projecten</span><span class="theme-pill pill-klimaatadaptief" style="font-size:10px;">Schil</span></span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Van der Sluis</div>
       <div class="card-title">Thermal Storage in Timber-Frame Construction</div>
@@ -1156,9 +1178,9 @@ button.fbtn-biltinintern .partner-logo-inline,
       </div>
     </div>
   </div>
-  <div class="project-card" data-thema="Studentenprojecten" data-status="Afgerond" data-jaar="2025" data-partner="Biltin">
+  <div class="project-card" data-thema="Biltin projecten" data-status="Afgerond" data-jaar="2025" data-partner="Biltin">
     <div class="card-bg" style="background-image: url('https://raw.githubusercontent.com/rosalahuis-proto/Biltinbaseprojecten/main/foto-sven.jpg'); background-size: cover; background-position: center;"></div><div class="card-overlay"></div>
-    <div class="card-top"><span class="theme-pill pill-overig">Studentenprojecten</span><span class="year-pill">2025</span></div>
+    <div class="card-top"><span class="theme-pill pill-overig">Biltin projecten</span><span class="year-pill">2025</span></div>
     <div class="card-content">
       <div class="card-category">Biltin</div>
       <div class="card-title">Aanloop studenten Biltin</div>
